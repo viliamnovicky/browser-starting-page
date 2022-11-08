@@ -1,0 +1,21 @@
+{
+  "name": "browser_starting_page",
+  "version": "1.0.0",
+  "description": "Learning API calls",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "sass scss/style.scss css/style.css -w",
+    "compile:sass": "sass scss/style.scss css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
+    "compress:css": "sass css/style.prefix.css css/style.css --style compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css"
+  },
+  "author": "Viliam Novický",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^10.0.0",
+    "sass": "^1.56.0"
+  }
+}
