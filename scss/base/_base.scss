@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 0.5s;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/*UNIVERSAL*/
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.blur {
+    filter: blur(5px);
+}
+
+.active {
+    background: rgba(0, 0, 0, 0.0) !important
+}
+
+.background {
+    z-index: -100000000;
+    width: 100%;
+    height: 100%;
+    background: url(../img/back01.jpg) no-repeat center center/cover;
+    position: fixed;
+    bottom: 0;
+}

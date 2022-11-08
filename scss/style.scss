@@ -1,0 +1,46 @@
+@import "base/base";
+
+@import "components/crypto";
+@import "components/diesel";
+@import "components/modal";
+@import "components/scrollbar";
+@import "components/weather";
+
+h3 {
+    font-size: 1rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.links {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 1rem 5rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    list-style: none;
+    position: fixed;
+    width: 30vw;
+    bottom: 2vh;
+    left: 35vw;
+    border-radius: 25px;
+
+}
+
+.links a {
+    background: rgba(98, 133, 82,0.5);
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    margin: auto;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    z-index: 5;
+}
+
+.links a:hover {
+    background: rgba(98, 133, 82, 1);
+}
