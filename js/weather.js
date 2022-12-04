@@ -41,22 +41,43 @@ const codes = [1000, 1003, 1006, 1009, 1030, 1063, 1066, 1069, 1072, 1087, 1114,
   1195, 1198, 1201, 1204, 1207, 1210, 1213, 1216, 1219, 1222, 1225, 1237, 1240, 1243, 1246, 1249, 1252, 1255, 1258, 1261, 1264, 1273, 1276, 1279, 1282]
 
 const getTodayData = function() {
-  fetch(`https://api.weatherapi.com/v1/current.json?key=378e1c6f3cbe4f8b8e9195724221603&q=Garmisch-Partenkirchen&aqi=no`)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-      weatherLocation.textContent = data.location.name;
-      weatherCondition.textContent = data.current.condition.text;
-      weatherIcon.style.background = `url(${data.current.condition.icon}) no-repeat center`;
-      weatherTemp.insertAdjacentHTML("afterbegin", `<i class="fas fa-thermometer-full"></i> ${data.current.temp_c} °C`)
-      weatherTempFeel.insertAdjacentHTML("afterbegin", `<i class="fas fa-temperature-high"></i> ${data.current.temp_c} °C`)
-      weatherWind.insertAdjacentHTML("afterbegin", `<i class="fas fa-wind"></i> ${data.current.wind_dir}`);
-      weatherVisibility.insertAdjacentHTML("afterbegin", `<i class="fas fa-eye"></i> ${data.current.vis_km}km`);
-      weatherCondition.textContent = data.current.condition.text;
-    });
+
+  if (navigator.geolocation) {
+
+    function success(pos) {
+      const crd = pos.coords;
+      localStorage.setItem("latitude", crd.latitude)
+      localStorage.setItem("longitude", crd.longitude)
+    }
+
+    function error(err) {
+      console.warn(`ERROR(${err.code}): ${err.message}`);
+      localStorage.setItem("latitude", 49.1974367)
+      localStorage.setItem("longitude", 21.6577553)
+    }
+    
+    navigator.geolocation.getCurrentPosition(success, error);
+
+      fetch(`https://api.weatherapi.com/v1/current.json?key=378e1c6f3cbe4f8b8e9195724221603&q=${localStorage.getItem("latitude")},${localStorage.getItem("longitude")}&aqi=no`)
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+
+          console.log(data);
+          weatherLocation.textContent = data.location.name;
+          weatherCondition.textContent = data.current.condition.text;
+          weatherIcon.style.background = `url(${data.current.condition.icon}) no-repeat center`;
+          weatherTemp.insertAdjacentHTML("afterbegin", `<i class="fas fa-thermometer-full"></i> ${data.current.temp_c} °C`)
+          weatherTempFeel.insertAdjacentHTML("afterbegin", `<i class="fas fa-temperature-high"></i> ${data.current.temp_c} °C`)
+          weatherWind.insertAdjacentHTML("afterbegin", `<i class="fas fa-wind"></i> ${data.current.wind_dir}`);
+          weatherVisibility.insertAdjacentHTML("afterbegin", `<i class="fas fa-eye"></i> ${data.current.vis_km}km`);
+          weatherCondition.textContent = data.current.condition.text;
+        });
+  }
 };
+
+
 
 const getFutureData = function() {
   fetch(`https://api.weatherapi.com/v1/forecast.json?key=378e1c6f3cbe4f8b8e9195724221603&q=Garmisch-Partenkirchen&days=4&aqi=yes&alerts=yes`)
