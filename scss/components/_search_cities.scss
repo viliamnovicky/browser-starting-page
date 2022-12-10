@@ -1,0 +1,54 @@
+.search {
+    &__city {
+        width: 20rem;
+        height: 9rem;
+        position: absolute;
+        left: 32vw;
+        top: 2vh;
+        background: rgba(#000, .3);
+        border-radius: 1rem;
+
+
+        &--label {
+            display: block;
+            color: white;
+            padding-bottom: 3rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        &--input {
+            height: 2rem;
+            border-radius: .5rem;
+            border: none;
+            outline: none;
+            margin-left: 2rem;
+        }
+
+        &--btn {
+            cursor: pointer;
+            width: 5rem;
+            height: 2rem;
+            border-radius: .5rem;
+            border: none;
+            outline: none;
+        }
+    }
+}
+
+.show-search-bar {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    z-index: 1000;
+    cursor: pointer;
+    right: calc(32vw + 1rem);
+    top: calc(1rem + 2vh);
+    border: none;
+    outline: none;
+
+    &:hover {
+        background: red;
+    }
+}
