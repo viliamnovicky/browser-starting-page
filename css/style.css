@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  transition: all 0.5s;
+  transition: all 0.2s;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -27,6 +27,13 @@
   background: url(../img/back01.jpg) no-repeat center center/cover;
   position: fixed;
   bottom: 0;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
 }
 
 #crypto {
@@ -227,6 +234,7 @@
 
 #location {
   grid-column: 1/6;
+  padding-top: 1vh;
 }
 
 .weath-info {
@@ -336,7 +344,7 @@
 }
 
 .search__city {
-  width: 20rem;
+  width: 20.7rem;
   height: 9rem;
   position: absolute;
   left: 32vw;
@@ -344,9 +352,23 @@
   background: rgba(0, 0, 0, 0.3);
   border-radius: 1rem;
 }
+.search__city--results {
+  top: 15rem;
+  left: auto;
+  right: 32vw;
+}
+.search__city--result {
+  color: white;
+  font-size: 1.5rem;
+  padding-left: 2rem;
+}
+.search__city--result:first-child {
+  padding-top: 1rem;
+}
 .search__city--label {
   display: block;
   color: white;
+  padding-top: 1vh;
   padding-bottom: 3rem;
   text-align: center;
   font-size: 2rem;
@@ -365,22 +387,45 @@
   border-radius: 0.5rem;
   border: none;
   outline: none;
+  background: rgba(255, 255, 255, 0.8);
+}
+.search__city--btn:hover {
+  background: white;
 }
 
 .show-search-bar {
   position: absolute;
   width: 2rem;
   height: 2rem;
-  border-radius: 50%;
-  z-index: 1000;
+  border-radius: 0.5rem;
   cursor: pointer;
   right: calc(32vw + 1rem);
   top: calc(1rem + 2vh);
   border: none;
   outline: none;
 }
+.show-search-bar p {
+  font-size: 1.2rem;
+  padding: 0;
+}
+.show-search-bar img {
+  width: 80%;
+}
 .show-search-bar:hover {
-  background: red;
+  background: white;
+}
+
+.btn__close--search {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  transition: all 0.2s;
+}
+.btn__close--search:hover {
+  background: white;
 }
 
 h3 {

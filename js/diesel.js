@@ -2,7 +2,7 @@ const diesel = document.getElementById("diesel");
 
 const getDiesel = function () {
   fetch(
-    `https://creativecommons.tankerkoenig.de/json/list.php?lat=${parseFloat(localStorage.getItem("latitude")).toFixed(3)}&lng=${parseFloat(localStorage.getItem("longitude")).toFixed(3)}&rad=50&sort=dist&type=all&apikey=b2f21a59-fb34-c7ca-47ea-68587c82cc20`
+    `https://creativecommons.tankerkoenig.de/json/list.php?lat=47.390&lng=11.255&rad=50&sort=dist&type=all&apikey=b2f21a59-fb34-c7ca-47ea-68587c82cc20`
   )
     .then(function (response) {
       return response.json();

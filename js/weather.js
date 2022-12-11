@@ -185,12 +185,3 @@ const getFutureData = function () {
 getLocation();
 getTodayData();
 getFutureData();
-
-const showSearchBarBTN = document.querySelector(".show-search-bar")
-const searchCityCont = document.querySelector(".search__city")
-
-showSearchBarBTN.addEventListener("click", function() {
-  searchCityCont.classList.remove("hidden")
-  searchCityCont.style.top = "15rem"
-  showSearchBarBTN.classList.add("hidden")
-})

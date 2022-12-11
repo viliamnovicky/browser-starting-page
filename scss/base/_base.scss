@@ -2,7 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    transition: all 0.5s;
+    transition: all 0.2s;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -28,4 +28,11 @@
     background: url(../img/back01.jpg) no-repeat center center/cover;
     position: fixed;
     bottom: 0;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: .5rem;
 }
