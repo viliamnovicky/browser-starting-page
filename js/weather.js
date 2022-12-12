@@ -37,6 +37,20 @@ const sunset = document.getElementById("sunset");
 const moonrise = document.getElementById("moonrise");
 const moonset = document.getElementById("moonset");
 
+const clearForecastToday = function() {
+  weatherTemp.textContent = ""
+  weatherTempFeel.textContent = ""
+  weatherWind.textContent = ""
+  weatherVisibility.textContent = ""
+}
+
+const clearForecastFuture = function() {
+  weatherSunrise.textContent = ""
+  weatherSunset.textContent = ""
+  weatherMaxTemp.textContent = ""
+  weatherMinTemp.textContent = ""
+}
+
 const codes = [
   1000, 1003, 1006, 1009, 1030, 1063, 1066, 1069, 1072, 1087, 1114, 1117, 1135,
   1147, 1150, 1153, 1168, 1171, 1180, 1183, 1186, 1189, 1192, 1195, 1198, 1201,
@@ -56,8 +70,8 @@ const getLocation = function () {
     function error(err) {
       console.log(err);
       console.warn(`ERROR(${err.code}): ${err.message}`);
-      localStorage.setItem("latitude", 49.1974367);
-      localStorage.setItem("longitude", 21.6577553);
+      //localStorage.setItem("latitude", 49.1974367);
+      //localStorage.setItem("longitude", 21.6577553);
     }
 
     navigator.geolocation.getCurrentPosition(success, error);
@@ -66,15 +80,16 @@ const getLocation = function () {
 
 const getTodayData = function () {
   fetch(
-    `https://api.weatherapi.com/v1/current.json?key=378e1c6f3cbe4f8b8e9195724221603&q=${localStorage.getItem(
-      "latitude"
-    )},${localStorage.getItem("longitude")}&aqi=no`
+    `https://api.weatherapi.com/v1/current.json?key=378e1c6f3cbe4f8b8e9195724221603&q=
+    ${localStorage.getItem("latitude")},
+    ${localStorage.getItem("longitude")}&aqi=no`
   )
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      clearForecastToday()
+
       weatherLocation.textContent = data.location.name;
       weatherCondition.textContent = data.current.condition.text;
       weatherIcon.style.background = `url(${data.current.condition.icon}) no-repeat center`;
@@ -100,12 +115,16 @@ const getTodayData = function () {
 
 const getFutureData = function () {
   fetch(
-    `https://api.weatherapi.com/v1/forecast.json?key=378e1c6f3cbe4f8b8e9195724221603&q=Garmisch-Partenkirchen&days=4&aqi=yes&alerts=yes`
+    `https://api.weatherapi.com/v1/forecast.json?key=378e1c6f3cbe4f8b8e9195724221603&q=
+    ${localStorage.getItem("latitude")},
+    ${localStorage.getItem("longitude")}&days=4&aqi=yes&alerts=yes`
   )
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
+      clearForecastFuture()
+
       weatherSunrise.insertAdjacentHTML(
         "afterbegin",
         `<i class="fas fa-arrow-up"></i><i class="fas fa-sun"></i> ${data.forecast.forecastday[0].astro.sunrise}`
@@ -185,3 +204,5 @@ const getFutureData = function () {
 getLocation();
 getTodayData();
 getFutureData();
+
+export  {getTodayData,getFutureData}

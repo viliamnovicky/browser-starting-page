@@ -12,15 +12,37 @@
             top: 15rem;
             left: auto;
             right: 32vw;
+            height: auto;
+            overflow: hidden;
+
         }
 
         &--result {
             color: white;
             font-size: 1.5rem;
-            padding-left: 2rem;
+            padding: 1rem 0rem 1rem 1rem;
+            cursor: pointer;
 
             &:first-child {
-                padding-top: 1rem;
+                margin-top: 1rem;
+            }
+
+            &:last-child {
+                margin-bottom: 1rem;
+            }
+
+            &:hover {
+                background: #fff;
+                color: #000;
+            }
+        }
+
+        .no-match {
+            cursor: default;
+            
+            &:hover {
+                background: none;
+                color: #fff;
             }
         }
 

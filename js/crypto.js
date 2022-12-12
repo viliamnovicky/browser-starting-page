@@ -29,8 +29,8 @@ const getCryptoData = function() {
       <div class="info-div crypto-div" id = "${data[coin].symbol}-div" data-position = "${data[coin].market_cap_rank}">
       <div class = "coin" id="${data[coin].symbol}"><br>
         <h1 id="${data[coin].symbol}-actual" style = "text-align: center">#${data[coin].market_cap_rank} ${(data[coin].symbol).toUpperCase()}</h1>
-        <h3 id="${data[coin].symbol}-actual">Aktuálna cena: ${parseFloat(data[coin].current_price).toFixed(2)}$</h3>
-        <h3 class = "green" id="${data[coin].symbol}-dif">Rozdiel (24h): <span> ${parseFloat(data[coin].price_change_percentage_24h).toFixed(2)}%</span></h3><br>
+        <h3 id="${data[coin].symbol}-actual">Actual price: ${parseFloat(data[coin].current_price).toFixed(2)}$</h3>
+        <h3 class = "green" id="${data[coin].symbol}-dif">Difference (24h): <span> ${parseFloat(data[coin].price_change_percentage_24h).toFixed(2)}%</span></h3><br>
         <h3 id="${data[coin].symbol}-ath">ATH: ${parseFloat(data[coin].ath)}$</h3>
         <img src="${data[coin].image}" width = "100px">
       </div>
@@ -41,8 +41,8 @@ const getCryptoData = function() {
       <div class="info-div crypto-div" id = "${data[coin].symbol}-div" data-position = "${data[coin].market_cap_rank}">
       <div class = "coin" id="${data[coin].symbol}"><br>
         <h1 id="${data[coin].symbol}-actual" style = "text-align: center">#${data[coin].market_cap_rank} ${(data[coin].symbol).toUpperCase()}</h1>
-        <h3 id="${data[coin].symbol}-actual">Aktuálna cena: ${parseFloat(data[coin].current_price).toFixed(2)}$</h3>
-        <h3 class = "red" id="${data[coin].symbol}-dif">Rozdiel (24h): <span> ${parseFloat(data[coin].price_change_percentage_24h).toFixed(2)}%</span></h3><br>
+        <h3 id="${data[coin].symbol}-actual">Actual price: ${parseFloat(data[coin].current_price).toFixed(2)}$</h3>
+        <h3 class = "red" id="${data[coin].symbol}-dif">Difference (24h): <span> ${parseFloat(data[coin].price_change_percentage_24h).toFixed(2)}%</span></h3><br>
         <h3 id="${data[coin].symbol}-ath">ATH: ${parseFloat(data[coin].ath)}$</h3>
         <img src="${data[coin].image}" width = "100px">
       </div>

@@ -7,7 +7,7 @@
     <script src="https://kit.fontawesome.com/0382ce9e52.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css"/>
-    <title>Document</title>
+    <title>Starting page</title>
   </head>
   <body>
     <div class="weather">
@@ -35,9 +35,9 @@
     </div>
     <div class="search search__city hidden">
       <button class="btn btn__close btn__close--search">x</button>
-      <label class = "search__city--label" for="search__city">mesto</label>
+      <label class = "search__city--label" for="search__city">city</label>
       <input class = "search__city--input" type="text" id = "search__city" name = "search__city">
-      <button class="search__city--btn">vyhľadaj</button>
+      <button class="search__city--btn">search</button>
     </div>
     <div class="search search__city search__city--results hidden"></div>
     <button class="show-search-bar"><img src="./img/search.svg" alt="search"></button>
@@ -59,23 +59,23 @@
         <button class="btn btn-close">x</button>
         <h1 class="modal-coin-name"></h1>
         <img src="#" class = "modal-img">
-        <h3>Aktuálna cena: <p class = "modal-coin-info" id = "modal-coin-price"></p></h3>
-        <h3>Najvyššia cena (24h): <p class = "modal-coin-info" id = "modal-coin-hight"></p></h3>
-        <h3>Max. zásoba: <p class = "modal-coin-info" id = "modal-coin-supply"></p></h3>
+        <h3>Actual price: <p class = "modal-coin-info" id = "modal-coin-price"></p></h3>
+        <h3>Highest price (24h): <p class = "modal-coin-info" id = "modal-coin-hight"></p></h3>
+        <h3>Max. supply: <p class = "modal-coin-info" id = "modal-coin-supply"></p></h3>
         <h3>ATH: <p class = "modal-coin-info" id = "modal-coin-ath"></p></h3>
-        <h3>Najnižšia cena (24h): <p class = "modal-coin-info" id = "modal-coin-low"></p></h3>
-        <h3>V obehu: <p class = "modal-coin-info" id = "modal-coin-circ"></p></h3>
+        <h3>Lowest price (24h): <p class = "modal-coin-info" id = "modal-coin-low"></p></h3>
+        <h3>Circular flow: <p class = "modal-coin-info" id = "modal-coin-circ"></p></h3>
         <h3>ATL: <p class = "modal-coin-info" id = "modal-coin-atl"></p></h3>
-        <h3>Rozdiel (24h): <p class = "modal-coin-info" id = "modal-coin-diff"></p></h3>
+        <h3>Difference (24h): <p class = "modal-coin-info" id = "modal-coin-diff"></p></h3>
         <h3>Market cap: <p class = "modal-coin-info" id = "modal-coin-market"></p></h3>
       </div>
     </div>
     <div class="modal-back-weather hidden">
       <div class="modal-weather">
         <div class="modal-weather-days">
-          <h2 class = "today active">DNES</h2>
-          <h2 class = tomorrow>ZAJTRA</h2>
-          <h2 class = after-tomorrow>POZAJTRA</h2>
+          <h2 class = "today active">TODAY</h2>
+          <h2 class = tomorrow>TOMORROW</h2>
+          <h2 class = after-tomorrow>AFTER-TOMORROW</h2>
         </div>
         <div class="modal-day-temps">
           <h3>8:00<p class="modal-day-hour" id = "hour-8"></p></h3>
@@ -97,10 +97,10 @@
       </div>
     </div>
 
-    <script src="./js/geo.js"></script>
-    <script src="./js/weather.js"></script>
-    <script src="./js/crypto.js"></script>
-    <script src="./js/diesel.js"></script>
+    <script type ="module" src="./js/weather.js"></script>
+    <script type="module" src="./js/geo.js"></script>
+    <script type="module" src="./js/crypto.js"></script>
+    <script type="module" src="./js/diesel.js"></script>
     <!-- <script src="./js/translate.js"></script> -->
   </body>
 </html>

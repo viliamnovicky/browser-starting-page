@@ -356,14 +356,31 @@
   top: 15rem;
   left: auto;
   right: 32vw;
+  height: auto;
+  overflow: hidden;
 }
 .search__city--result {
   color: white;
   font-size: 1.5rem;
-  padding-left: 2rem;
+  padding: 1rem 0rem 1rem 1rem;
+  cursor: pointer;
 }
 .search__city--result:first-child {
-  padding-top: 1rem;
+  margin-top: 1rem;
+}
+.search__city--result:last-child {
+  margin-bottom: 1rem;
+}
+.search__city--result:hover {
+  background: #fff;
+  color: #000;
+}
+.search__city .no-match {
+  cursor: default;
+}
+.search__city .no-match:hover {
+  background: none;
+  color: #fff;
 }
 .search__city--label {
   display: block;
