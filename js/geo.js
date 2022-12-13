@@ -67,6 +67,17 @@ searchCityResults.addEventListener("click", function(e) {
       
 })
 
+searchCityResults.addEventListener("keydown", function(e) {
+    const city = e.target.closest(".search__city--result")
+    if(e.keycode === 13) {
+        console.log(city);
+        localStorage.setItem("latitude", citiesArray[city.id].lat);
+          localStorage.setItem("longitude", citiesArray[city.id].lng);
+          getTodayData()
+          getFutureData()
+    }   
+})
+
 
 
 

@@ -206,3 +206,5 @@ getTodayData();
 getFutureData();
 
 export  {getTodayData,getFutureData}
+
+console.log("New York".toLowerCase());

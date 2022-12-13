@@ -21,7 +21,6 @@ const getCryptoData = function() {
       return response.json();
     })
     .then(function (data) {
-      //console.log(data[1]);
       for (let coin = 0; coin <= 99; coin++) {
         
         if ( parseFloat(data[coin].price_change_percentage_24h) > 0) {
@@ -47,9 +46,9 @@ const getCryptoData = function() {
         <img src="${data[coin].image}" width = "100px">
       </div>
     </div>`)
-        }
-        
+        }   
       }
+
       const cryptoDiv = document.querySelectorAll(".crypto-div")
       cryptoDiv.forEach(div => div.addEventListener("click", function() {
         const index = parseInt(div.dataset.position) - 1
@@ -65,13 +64,6 @@ const getCryptoData = function() {
         modalCoinAtl.textContent = `${parseFloat(data[index].atl)}$`
         modalCoinCirc.textContent = `${parseFloat(data[index].circulating_supply)}`
         modalImage.src = `${data[index].image}`
-
-        // document.querySelector(".weather").classList.add("blur")
-        // document.querySelector(".back").classList.add("blur")
-        // document.querySelector(".links").classList.add("blur")
-        // document.querySelector(".diesel-div").classList.add("blur")
-        // document.querySelector(".music-player").classList.add("blur")
-        // crypto.classList.add("blur")
       }))
     });
 };
@@ -81,14 +73,9 @@ getCryptoData()
 
 cryptoClose.addEventListener("click", function() {
   modalCryptoBack.classList.add("hidden")
-  document.querySelector(".weather").classList.remove("blur")
-  document.querySelector(".back").classList.remove("blur")
-  document.querySelector(".links").classList.remove("blur")
-  document.querySelector(".music-player").classList.remove("blur")
-  document.querySelector(".diesel-div").classList.remove("blur")
-  crypto.classList.remove("blur")
 })
 
 // setInterval(function() {
 // window.location.reload()
 // }, 50000)
+
