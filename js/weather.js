@@ -124,6 +124,7 @@ const getFutureData = function () {
     })
     .then(function (data) {
       clearForecastFuture()
+      console.log(data);
 
       weatherSunrise.insertAdjacentHTML(
         "afterbegin",
@@ -158,10 +159,11 @@ const getFutureData = function () {
 
         for (let i = 0; i < codes.length; i++) {
           if (
-            codes[i] === data.forecast.forecastday[index].day.condition.code
+            codes[i] === data.forecast.forecastday[index].day.condition.code 
           ) {
-            modalWeather.style.background = `url(img/w${codes[i]}.jpg) no-repeat center center/cover`;
-            console.log(codes[i]);
+            data.current.is_day ? 
+            modalWeather.style.background = `url(img/w${codes[i]}.jpg) no-repeat center center/cover` : 
+            modalWeather.style.background = `url(img/w${codes[i]}n.jpg) no-repeat center center/cover`;
           }
         }
       };
@@ -206,5 +208,3 @@ getTodayData();
 getFutureData();
 
 export  {getTodayData,getFutureData}
-
-console.log("New York".toLowerCase());
