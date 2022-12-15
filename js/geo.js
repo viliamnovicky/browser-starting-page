@@ -1,6 +1,13 @@
 import { getTodayData, getFutureData } from "./weather.js";
 
+const searchCityCont = document.querySelector(".search__city");
+const searchCityResults = document.querySelector(".search__city--results");
+const searchCityBTN = document.querySelector(".search__city--btn");
+const searchCityInput = document.querySelector(".search__city--input");
+const showSearchBarBTN = document.querySelector(".show-search-bar");
+const closeSearchBarBTN = document.querySelector(".btn__close--search");
 const results = document.querySelector(".search__city--results");
+
 let citiesArray = [];
 
 const cities = function (location) {
@@ -33,18 +40,11 @@ const cities = function (location) {
     });
 };
 
-const searchCityCont = document.querySelector(".search__city");
-const searchCityResults = document.querySelector(".search__city--results");
-const searchCityBTN = document.querySelector(".search__city--btn");
-const searchCityInput = document.querySelector(".search__city--input");
-
 searchCityBTN.addEventListener("click", function () {
   const searchedCity = searchCityInput.value;
   cities(searchedCity);
 });
 
-const showSearchBarBTN = document.querySelector(".show-search-bar");
-const closeSearchBarBTN = document.querySelector(".btn__close--search");
 
 showSearchBarBTN.addEventListener("click", function () {
   console.log("fuck");
