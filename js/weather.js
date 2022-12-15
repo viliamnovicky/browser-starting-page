@@ -51,13 +51,6 @@ const clearForecastFuture = function() {
   weatherMinTemp.textContent = ""
 }
 
-const codes = [
-  1000, 1003, 1006, 1009, 1030, 1063, 1066, 1069, 1072, 1087, 1114, 1117, 1135,
-  1147, 1150, 1153, 1168, 1171, 1180, 1183, 1186, 1189, 1192, 1195, 1198, 1201,
-  1204, 1207, 1210, 1213, 1216, 1219, 1222, 1225, 1237, 1240, 1243, 1246, 1249,
-  1252, 1255, 1258, 1261, 1264, 1273, 1276, 1279, 1282,
-];
-
 const getLocation = function () {
   if (navigator.geolocation) {
     function success(pos) {
@@ -157,15 +150,9 @@ const getFutureData = function () {
         moonrise.textContent = `${data.forecast.forecastday[index].astro.moonrise}`;
         moonset.textContent = `${data.forecast.forecastday[index].astro.moonset}`;
 
-        for (let i = 0; i < codes.length; i++) {
-          if (
-            codes[i] === data.forecast.forecastday[index].day.condition.code 
-          ) {
-            data.current.is_day ? 
-            modalWeather.style.background = `url(img/w${codes[i]}.jpg) no-repeat center center/cover` : 
-            modalWeather.style.background = `url(img/w${codes[i]}n.jpg) no-repeat center center/cover`;
-          }
-        }
+        data.current.is_day ? 
+        modalWeather.style.background = `url(img/w${data.forecast.forecastday[index].day.condition.code}.jpg) no-repeat center center/cover` : 
+        modalWeather.style.background = `url(img/w${data.forecast.forecastday[index].day.condition.code}n.jpg) no-repeat center center/cover`;
       };
 
       weather.addEventListener("click", function () {
