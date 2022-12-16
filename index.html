@@ -47,10 +47,28 @@
     </div>
     <div id="crypto"></div>
     <div class="task-list">
+      <div class="task-list__new-task hidden hidden__no-space">
+        <input class="task-list__new-task--input" placeholder = "new task" type="text" name="new-task" id="new-task">
+        <button class="btn btn__new-task " for="new-task">new task</button>
+      </div>
       <div class="task-list__task">
         <input class="task-list__checkbox" type="checkbox" name="box1" id="box1">
         <span class="task-list__radio"></span>
         <label class="task-list__label" for="box1">Porobiť strečing</label>
+      </div>
+      <div class="task-list__task">
+        <input class="task-list__checkbox" type="checkbox" name="box2" id="box2">
+        <span class="task-list__radio"></span>
+        <label class="task-list__label" for="box2">Pokódovať</label>
+      </div>
+      <div class="task-list__task">
+        <input class="task-list__checkbox" type="checkbox" name="box3" id="box3">
+        <span class="task-list__radio"></span>
+        <label class="task-list__label" for="box3">Poľúbiť Lucku</label>
+      </div>
+      <div class="task-list__buttons">
+        <button class="btn btn__add-task">add task</button>
+        <button class="btn btn__delete-task">delete selected</button>
       </div>
     </div>
     <div class="background"></div>

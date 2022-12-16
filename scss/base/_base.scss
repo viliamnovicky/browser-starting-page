@@ -9,8 +9,12 @@
 /*UNIVERSAL*/
 
 .hidden {
-    opacity: 0;
-    visibility: hidden;
+    opacity: 0 !important;
+    visibility: hidden !important;
+
+    &__no-space {
+        position: absolute !important;
+    }
 }
 
 .blur {
@@ -35,4 +39,30 @@
     outline: none;
     cursor: pointer;
     border-radius: .5rem;
+    width: 8rem;
+    height: 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    &__add-task {
+        border: 2px solid green;
+        background: white;
+        color: green;
+
+        &:hover {
+            background: green;
+            color: white;
+        }
+    }
+
+    &__delete-task {
+        border: 2px solid red;
+        background: white;
+        color: red;
+
+        &:hover {
+            background: red;
+            color: white;
+        }
+    }
 }

@@ -8,8 +8,11 @@
 
 /*UNIVERSAL*/
 .hidden {
-  opacity: 0;
-  visibility: hidden;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+.hidden__no-space {
+  position: absolute !important;
 }
 
 .blur {
@@ -34,6 +37,28 @@
   outline: none;
   cursor: pointer;
   border-radius: 0.5rem;
+  width: 8rem;
+  height: 2.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.btn__add-task {
+  border: 2px solid green;
+  background: white;
+  color: green;
+}
+.btn__add-task:hover {
+  background: green;
+  color: white;
+}
+.btn__delete-task {
+  border: 2px solid red;
+  background: white;
+  color: red;
+}
+.btn__delete-task:hover {
+  background: red;
+  color: white;
 }
 
 #crypto {
@@ -119,6 +144,7 @@
   position: fixed;
   width: 100%;
   height: 100%;
+  backdrop-filter: blur(5px);
 }
 
 .modal,
@@ -449,20 +475,37 @@
 .task-list {
   position: absolute;
   width: 20vw;
-  min-height: 15rem;
   background: white;
   border-radius: 25px;
   right: 5vw;
   top: 24vh;
 }
+.task-list__new-task {
+  height: 5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  transition: none;
+}
+.task-list__new-task--input {
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: 1px solid grey;
+  padding-left: 1rem;
+}
 .task-list__task {
   padding-left: 2rem;
-}
-.task-list__task:first-child {
-  margin-top: 1rem;
+  width: 100%;
+  height: 5rem;
+  position: relative;
 }
 .task-list__checkbox {
   visibility: hidden;
+  position: absolute;
 }
 .task-list__checkbox:checked ~ .task-list__label {
   text-decoration: line-through;
@@ -470,21 +513,54 @@
 .task-list__checkbox:checked ~ .task-list__radio {
   background: black;
 }
+.task-list__checkbox:checked ~ .task-list__radio::before {
+  opacity: 1;
+}
 .task-list__radio {
   display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 5px;
+  border: 1px solid black;
+  left: 10%;
+}
+.task-list__radio::before {
+  content: "";
+  background: black;
+  display: block;
   width: 1rem;
   height: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   border-radius: 5px;
-  border: 5px solid white;
-  outline: 5px solid black;
+  opacity: 0;
 }
 .task-list__label {
   cursor: pointer;
-  padding-left: 2rem;
-  width: 100%;
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  align-items: center;
+  display: grid;
+  text-align: right;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom: 1px solid black;
+  font-size: 1.5rem;
+  user-select: none;
 }
-.task-list__label:hover {
-  background: rgba(0, 0, 0, 0.2);
+.task-list__buttons {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
 }
 
 h3 {
