@@ -4,9 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://kit.fontawesome.com/0382ce9e52.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css"/>
+    <script
+      src="https://kit.fontawesome.com/0382ce9e52.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Starting page</title>
   </head>
   <body>
@@ -16,7 +22,7 @@
         <h3 id="weath-temp"></h3>
         <h3 id="weath-temp-feel"></h3>
       </div>
-      <div class="weath-info" id = "weath-border">
+      <div class="weath-info" id="weath-border">
         <h3 id="weath-wind"></h3>
         <h3 id="weath-vis"></h3>
       </div>
@@ -24,7 +30,7 @@
         <h3 id="weath-icon"></h3>
         <h3 id="weath-cond"></h3>
       </div>
-      <div class="weath-info" id = "weath-border">
+      <div class="weath-info" id="weath-border">
         <h3 id="weath-max"></h3>
         <h3 id="weath-min"></h3>
       </div>
@@ -35,94 +41,172 @@
     </div>
     <div class="search search__city hidden">
       <button class="btn btn__close btn__close--search">x</button>
-      <label class = "search__city--label" for="search__city">city</label>
-      <input class = "search__city--input" type="text" id = "search__city" name = "search__city">
+      <label class="search__city--label" for="search__city">city</label>
+      <input
+        class="search__city--input"
+        type="text"
+        id="search__city"
+        name="search__city"
+      />
       <button class="search__city--btn">search</button>
     </div>
     <div class="search search__city search__city--results hidden"></div>
-    <button class="show-search-bar"><img src="./img/search.svg" alt="search"></button>
-    <div class="info-div diesel-div" id = "diesel-div">
-      <div class = "diesel" id="diesel">
-      </div>
+    <button class="show-search-bar">
+      <img src="./img/search.svg" alt="search" />
+    </button>
+    <div class="info-div diesel-div" id="diesel-div">
+      <div class="diesel" id="diesel"></div>
     </div>
     <div id="crypto"></div>
     <div class="task-list">
       <div class="task-list__new-task hidden hidden__no-space">
-        <input class="task-list__new-task--input" placeholder = "new task" type="text" name="new-task" id="new-task">
-        <button class="btn btn__new-task " for="new-task">new task</button>
+        <input
+          class="task-list__new-task--input"
+          placeholder="new task"
+          type="text"
+          name="new-task"
+          id="new-task"
+        />
+        <button class="btn btn__new-task" for="new-task">add task</button>
       </div>
-      <div class="task-list__task">
-        <input class="task-list__checkbox" type="checkbox" name="box1" id="box1">
-        <span class="task-list__radio"></span>
-        <label class="task-list__label" for="box1">Porobiť strečing</label>
-      </div>
-      <div class="task-list__task">
-        <input class="task-list__checkbox" type="checkbox" name="box2" id="box2">
-        <span class="task-list__radio"></span>
-        <label class="task-list__label" for="box2">Pokódovať</label>
-      </div>
-      <div class="task-list__task">
-        <input class="task-list__checkbox" type="checkbox" name="box3" id="box3">
-        <span class="task-list__radio"></span>
-        <label class="task-list__label" for="box3">Poľúbiť Lucku</label>
-      </div>
+      <div class="task-list__cont"></div>
       <div class="task-list__buttons">
-        <button class="btn btn__add-task">add task</button>
+        <button class="btn btn__add-task">new task</button>
         <button class="btn btn__delete-task">delete selected</button>
       </div>
     </div>
     <div class="background"></div>
     <ul class="links">
-      <li class="link"><a href="https://mail.google.com/mail/u/0/#inbox" target = "_blank"><i class="fas fa-envelope"></i></a></li>
-      <li class="link"><a href="https://www.facebook.com/" target = "_blank"><i class="fab fa-facebook"></i></a></li>
-      <li class="link"><a href="https://www.google.com/maps" target = "_blank"><i class="fas fa-map"></i></a></li>
-      <li class="link"><a href="https://www.instagram.com/" target = "_blank"><i class="fab fa-instagram"></i></a></li>
-      <li class="link"><a href="https://www.windy.com/?47.503,11.052,9" target = "_blank"><i class="fas fa-cloud-sun-rain"></i></a></li>
+      <li class="link">
+        <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank"
+          ><i class="fas fa-envelope"></i
+        ></a>
+      </li>
+      <li class="link">
+        <a href="https://www.facebook.com/" target="_blank"
+          ><i class="fab fa-facebook"></i
+        ></a>
+      </li>
+      <li class="link">
+        <a href="https://www.google.com/maps" target="_blank"
+          ><i class="fas fa-map"></i
+        ></a>
+      </li>
+      <li class="link">
+        <a href="https://www.instagram.com/" target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+      </li>
+      <li class="link">
+        <a href="https://www.windy.com/?47.503,11.052,9" target="_blank"
+          ><i class="fas fa-cloud-sun-rain"></i
+        ></a>
+      </li>
     </ul>
     <div class="modal-back hidden">
       <div class="modal">
         <button class="btn btn-close">x</button>
         <h1 class="modal-coin-name"></h1>
-        <img src="#" class = "modal-img">
-        <h3>Actual price: <p class = "modal-coin-info" id = "modal-coin-price"></p></h3>
-        <h3>Highest price (24h): <p class = "modal-coin-info" id = "modal-coin-hight"></p></h3>
-        <h3>Max. supply: <p class = "modal-coin-info" id = "modal-coin-supply"></p></h3>
-        <h3>ATH: <p class = "modal-coin-info" id = "modal-coin-ath"></p></h3>
-        <h3>Lowest price (24h): <p class = "modal-coin-info" id = "modal-coin-low"></p></h3>
-        <h3>Circular flow: <p class = "modal-coin-info" id = "modal-coin-circ"></p></h3>
-        <h3>ATL: <p class = "modal-coin-info" id = "modal-coin-atl"></p></h3>
-        <h3>Difference (24h): <p class = "modal-coin-info" id = "modal-coin-diff"></p></h3>
-        <h3>Market cap: <p class = "modal-coin-info" id = "modal-coin-market"></p></h3>
+        <img src="#" class="modal-img" />
+        <h3>
+          Actual price:
+          <p class="modal-coin-info" id="modal-coin-price"></p>
+        </h3>
+        <h3>
+          Highest price (24h):
+          <p class="modal-coin-info" id="modal-coin-hight"></p>
+        </h3>
+        <h3>
+          Max. supply:
+          <p class="modal-coin-info" id="modal-coin-supply"></p>
+        </h3>
+        <h3>
+          ATH:
+          <p class="modal-coin-info" id="modal-coin-ath"></p>
+        </h3>
+        <h3>
+          Lowest price (24h):
+          <p class="modal-coin-info" id="modal-coin-low"></p>
+        </h3>
+        <h3>
+          Circular flow:
+          <p class="modal-coin-info" id="modal-coin-circ"></p>
+        </h3>
+        <h3>
+          ATL:
+          <p class="modal-coin-info" id="modal-coin-atl"></p>
+        </h3>
+        <h3>
+          Difference (24h):
+          <p class="modal-coin-info" id="modal-coin-diff"></p>
+        </h3>
+        <h3>
+          Market cap:
+          <p class="modal-coin-info" id="modal-coin-market"></p>
+        </h3>
       </div>
     </div>
     <div class="modal-back-weather hidden">
       <div class="modal-weather">
         <div class="modal-weather-days">
-          <h2 class = "today active">TODAY</h2>
-          <h2 class = tomorrow>TOMORROW</h2>
-          <h2 class = after-tomorrow>AFTER-TOMORROW</h2>
+          <h2 class="today active">TODAY</h2>
+          <h2 class="tomorrow">TOMORROW</h2>
+          <h2 class="after-tomorrow">AFTER-TOMORROW</h2>
         </div>
         <div class="modal-day-temps">
-          <h3>8:00<p class="modal-day-hour" id = "hour-8"></p></h3>
-          <h3>10:00<p class="modal-day-hour" id = "hour-10"></p> </h3>
-          <h3>12:00<p class="modal-day-hour" id = "hour-12"></p> </h3>
-          <h3>14:00<p class="modal-day-hour" id = "hour-14"></p> </h3>
-          <h3>16:00<p class="modal-day-hour" id = "hour-16"></p> </h3>
-          <h3>18:00<p class="modal-day-hour" id = "hour-18"></p> </h3>
-          <h3>20:00<p class="modal-day-hour" id = "hour-20"></p> </h3>
+          <h3>
+            8:00
+            <p class="modal-day-hour" id="hour-8"></p>
+          </h3>
+          <h3>
+            10:00
+            <p class="modal-day-hour" id="hour-10"></p>
+          </h3>
+          <h3>
+            12:00
+            <p class="modal-day-hour" id="hour-12"></p>
+          </h3>
+          <h3>
+            14:00
+            <p class="modal-day-hour" id="hour-14"></p>
+          </h3>
+          <h3>
+            16:00
+            <p class="modal-day-hour" id="hour-16"></p>
+          </h3>
+          <h3>
+            18:00
+            <p class="modal-day-hour" id="hour-18"></p>
+          </h3>
+          <h3>
+            20:00
+            <p class="modal-day-hour" id="hour-20"></p>
+          </h3>
         </div>
         <div class="modal-day-4">
-          <h3><i class="fas fa-arrow-up"></i><i class="far fa-sun"></i><p class = "modal-day-sun" id = "sunrise"></p></h3>
-          <h3><i class="fas fa-arrow-down"></i><i class="far fa-sun"></i><p class = "modal-day-sun" id = "sunset"></p></h3>
-          <h3><i class="fas fa-arrow-up"></i><i class="far fa-moon"></i><p class = "modal-day-sun" id = "moonrise"></p></h3>
-          <h3><i class="fas fa-arrow-down"></i><i class="far fa-moon"></i><p class = "modal-day-sun" id = "moonset"></p></h3>
+          <h3>
+            <i class="fas fa-arrow-up"></i><i class="far fa-sun"></i>
+            <p class="modal-day-sun" id="sunrise"></p>
+          </h3>
+          <h3>
+            <i class="fas fa-arrow-down"></i><i class="far fa-sun"></i>
+            <p class="modal-day-sun" id="sunset"></p>
+          </h3>
+          <h3>
+            <i class="fas fa-arrow-up"></i><i class="far fa-moon"></i>
+            <p class="modal-day-sun" id="moonrise"></p>
+          </h3>
+          <h3>
+            <i class="fas fa-arrow-down"></i><i class="far fa-moon"></i>
+            <p class="modal-day-sun" id="moonset"></p>
+          </h3>
         </div>
-        <img src="#" class = "modal-img modal-weather-img">
+        <img src="#" class="modal-img modal-weather-img" />
         <button class="btn btn-close-weather">x</button>
       </div>
     </div>
 
-    <script type ="module" src="./js/weather.js"></script>
+    <script type="module" src="./js/weather.js"></script>
     <script type="module" src="./js/geo.js"></script>
     <script type="module" src="./js/crypto.js"></script>
     <script type="module" src="./js/diesel.js"></script>

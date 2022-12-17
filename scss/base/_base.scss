@@ -44,7 +44,8 @@
     font-weight: 800;
     text-transform: uppercase;
 
-    &__add-task {
+    &__add-task,
+    &__new-task {
         border: 2px solid green;
         background: white;
         color: green;
