@@ -19,6 +19,7 @@ const modalWeather = document.querySelector(".modal-weather");
 const modalBackWeather = document.querySelector(".modal-back-weather");
 const btnCloseWeather = document.querySelector(".btn-close-weather");
 
+const modalCondition = document.querySelector(".modal-weather__condition");
 const modalToday = document.querySelector(".today");
 const modalTomorrow = document.querySelector(".tomorrow");
 const modalAfterTomorrow = document.querySelector(".after-tomorrow");
@@ -137,6 +138,7 @@ const getFutureData = function () {
       );
 
       const weatherHourData = function (index) {
+        modalCondition.textContent = `${data.forecast.forecastday[index].day.condition.text}`;
         modalImageWeather.src = `${data.forecast.forecastday[index].day.condition.icon}`;
         hour8.textContent = `${data.forecast.forecastday[index].hour[8].temp_c}°C`;
         hour10.textContent = `${data.forecast.forecastday[index].hour[10].temp_c}°C`;
