@@ -6,6 +6,10 @@
   font-family: "Open Sans", sans-serif;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 /*UNIVERSAL*/
 .hidden {
   opacity: 0 !important;
@@ -13,10 +17,6 @@
 }
 .hidden__no-space {
   position: absolute !important;
-}
-
-.blur {
-  filter: blur(5px);
 }
 
 .active {
@@ -32,33 +32,8 @@
   bottom: 0;
 }
 
-.btn {
-  border: none;
-  outline: none;
-  cursor: pointer;
-  border-radius: 0.5rem;
-  width: 8rem;
-  height: 2.5rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-.btn__add-task, .btn__new-task {
-  border: 2px solid green;
-  background: white;
-  color: green;
-}
-.btn__add-task:hover, .btn__new-task:hover {
-  background: green;
-  color: white;
-}
-.btn__delete-task {
-  border: 2px solid red;
-  background: white;
-  color: red;
-}
-.btn__delete-task:hover {
-  background: red;
-  color: white;
+h3, p {
+  font-size: 1.6rem;
 }
 
 #crypto {
@@ -76,7 +51,7 @@
   width: 20vw;
   height: 20vh;
   position: fixed;
-  border-radius: 25px;
+  border-radius: 1rem;
   color: white;
   text-align: left;
   margin-bottom: 2vh;
@@ -93,11 +68,11 @@
 
 .coin {
   height: 100%;
-  border-radius: 25px;
+  border-radius: 1rem;
 }
 
 .info-div h3 {
-  padding-left: 4rem;
+  padding-left: 6.4rem;
 }
 
 #crypto img {
@@ -121,13 +96,13 @@
 }
 
 #diesel {
-  border-radius: 25px;
+  border-radius: 1rem;
   height: 100%;
   background: url(../img/diesel.png) no-repeat center center/cover;
 }
 
 #diesel h3:first-child {
-  padding-top: 1rem;
+  padding-top: 1.6rem;
 }
 
 #diesel:hover {
@@ -138,17 +113,17 @@
   background: black;
 }
 
-.modal-back,
-.modal-back-weather {
+.modal__back {
   background: rgba(0, 0, 0, 0.7);
   position: fixed;
   width: 100%;
   height: 100%;
   backdrop-filter: blur(5px);
+  left: 0;
+  top: 0;
 }
 
-.modal,
-.modal-weather {
+.modal {
   color: white;
   position: fixed;
   width: 50%; /*970*/
@@ -156,17 +131,18 @@
   top: 20%;
   left: 25%;
   z-index: 1000;
-  border-radius: 20px;
+  border-radius: 1rem;
   display: grid;
+}
+.modal-weather {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(4, 1fr);
   border: 2px solid rgb(61, 61, 61);
 }
-.modal__condition,
 .modal-weather__condition {
   width: 100%;
   text-align: center;
-  font-size: 3rem;
+  font-size: 4.8rem;
   display: grid;
   align-items: center;
 }
@@ -181,13 +157,13 @@
 
 .btn-close,
 .btn-close-weather {
-  padding: 0 1rem;
+  padding: 0 1.6rem;
   border: 0;
   position: absolute;
   right: 0;
   cursor: pointer;
   background: none;
-  font-size: 2rem;
+  font-size: 3.2rem;
   color: white;
 }
 
@@ -200,10 +176,10 @@
 
 .modal-img {
   position: absolute;
-  left: -5rem;
-  top: -5rem;
-  width: 200px;
-  height: 200px;
+  left: -12rem;
+  top: -12rem;
+  width: 20rem;
+  height: 20rem;
   border-radius: 50%;
   z-index: -1;
   border: 2px solid rgb(61, 61, 61);
@@ -215,8 +191,8 @@
 }
 
 .modal h3 {
-  padding-top: 2rem;
-  padding-bottom: 1rem;
+  padding-top: 3.2rem;
+  padding-bottom: 1.6rem;
   border-top: 1px solid rgb(61, 61, 61);
   width: 100%;
   height: 100%;
@@ -255,7 +231,7 @@
   text-align: center;
   top: 2vh;
   left: 32vw;
-  position: fixed;
+  position: relative;
   border-radius: 25px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -266,30 +242,28 @@
   cursor: pointer;
   background: rgba(0, 0, 0, 0.5);
 }
-
-#location {
+.weather__location {
   grid-column: 1/6;
   padding-top: 1vh;
 }
-
-.weath-info {
+.weather__info {
   width: 7vw;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.4rem;
   text-align: center;
 }
-
-#weath-icon {
+.weather__info:nth-child(3), .weather__info:nth-child(5) {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+.weather__temp i, .weather__wind i {
+  padding-right: 1rem;
+}
+.weather__icon {
   width: 7vw;
-  height: 3.5rem;
+  height: 5.6rem;
   display: inline-block;
 }
-
-#weath-temp i,
-#weath-wind i {
-  padding-right: 0.6rem;
-}
-
-#weath-cond {
+.weather__cond {
   text-align: center;
   margin: auto;
   display: grid;
@@ -297,18 +271,12 @@
   justify-content: center;
 }
 
-#weath-border {
-  border-left: 1px solid white;
-  border-right: 1px solid white;
-}
-
 .modal-weather {
   background: url(../img/modal-weather.jpg) no-repeat center center/cover;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(4, 1fr);
 }
-
-.modal-weather-days {
+.modal-weather__days {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 100%;
@@ -323,11 +291,11 @@
   justify-content: center;
   width: 100%;
   background: rgba(0, 0, 0, 0.2);
-  padding: 1rem 0;
+  padding: 1.6rem 0;
 }
 
 .modal-day-4 i {
-  font-size: 2rem;
+  font-size: 3.2rem;
 }
 
 .modal-day-temps {
@@ -370,17 +338,17 @@
 }
 
 .modal-weather-img {
-  width: 64px;
-  height: 64px;
+  width: 6.5rem;
+  height: 6.5rem;
   opacity: 1;
-  left: -2rem;
-  top: -2rem;
+  left: -3.2rem;
+  top: -3.2rem;
   z-index: 5;
 }
 
 .search__city {
-  width: 20.7rem;
-  height: 9rem;
+  width: 33.1rem;
+  height: 14.5rem;
   position: absolute;
   left: 32vw;
   top: 2vh;
@@ -388,7 +356,7 @@
   border-radius: 1rem;
 }
 .search__city--results {
-  top: 15rem;
+  top: 24rem;
   left: auto;
   right: 32vw;
   height: auto;
@@ -396,15 +364,15 @@
 }
 .search__city--result {
   color: white;
-  font-size: 1.5rem;
-  padding: 1rem 0rem 1rem 1rem;
+  font-size: 2.4rem;
+  padding: 1.6rem 0rem 1.6rem 1.6rem;
   cursor: pointer;
 }
 .search__city--result:first-child {
-  margin-top: 1rem;
+  margin-top: 1.6rem;
 }
 .search__city--result:last-child {
-  margin-bottom: 1rem;
+  margin-bottom: 1.6rem;
 }
 .search__city--result:hover {
   background: #fff;
@@ -421,22 +389,22 @@
   display: block;
   color: white;
   padding-top: 1vh;
-  padding-bottom: 3rem;
+  padding-bottom: 4.8rem;
   text-align: center;
-  font-size: 2rem;
+  font-size: 3.2rem;
 }
 .search__city--input {
-  height: 2rem;
-  border-radius: 0.5rem;
+  height: 3.2rem;
+  border-radius: 1rem;
   border: none;
   outline: none;
-  margin-left: 2rem;
+  margin-left: 3.2rem;
 }
 .search__city--btn {
   cursor: pointer;
-  width: 5rem;
-  height: 2rem;
-  border-radius: 0.5rem;
+  width: 8rem;
+  height: 3.2rem;
+  border-radius: 1rem;
   border: none;
   outline: none;
   background: rgba(255, 255, 255, 0.8);
@@ -445,51 +413,16 @@
   background: white;
 }
 
-.show-search-bar {
-  position: absolute;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  right: calc(32vw + 1rem);
-  top: calc(1rem + 2vh);
-  border: none;
-  outline: none;
-}
-.show-search-bar p {
-  font-size: 1.2rem;
-  padding: 0;
-}
-.show-search-bar img {
-  width: 80%;
-}
-.show-search-bar:hover {
-  background: white;
-}
-
-.btn__close--search {
-  width: 2rem;
-  height: 2rem;
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  background: rgba(255, 255, 255, 0.8);
-  transition: all 0.2s;
-}
-.btn__close--search:hover {
-  background: white;
-}
-
 .task-list {
   position: absolute;
   width: 20vw;
   background: white;
-  border-radius: 25px;
+  border-radius: 1rem;
   right: 5vw;
   top: 24vh;
 }
 .task-list__new-task {
-  height: 5rem;
+  height: 8rem;
   position: relative;
   display: flex;
   align-items: center;
@@ -499,16 +432,16 @@
   transition: none;
 }
 .task-list__new-task--input {
-  height: 2.5rem;
-  border-radius: 0.5rem;
+  height: 4rem;
+  border-radius: 1rem;
   outline: none;
   border: 1px solid grey;
-  padding-left: 1rem;
+  padding-left: 1.6rem;
 }
 .task-list__task {
-  padding-left: 2rem;
+  padding-left: 3.2rem;
   width: 100%;
-  height: 5rem;
+  height: 8rem;
   position: relative;
 }
 .task-list__checkbox {
@@ -529,9 +462,9 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 2rem;
-  height: 2rem;
-  border-radius: 5px;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 1rem;
   border: 1px solid black;
   left: 10%;
 }
@@ -539,13 +472,13 @@
   content: "";
   background: black;
   display: block;
-  width: 1rem;
-  height: 1rem;
+  width: 1.6rem;
+  height: 1.6rem;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 5px;
+  border-radius: 1rem;
   opacity: 0;
 }
 .task-list__label {
@@ -559,11 +492,11 @@
   left: 50%;
   transform: translateX(-50%);
   border-bottom: 1px solid black;
-  font-size: 1.5rem;
+  font-size: 2.4rem;
   user-select: none;
 }
 .task-list__buttons {
-  height: 5rem;
+  height: 8rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -571,9 +504,64 @@
   margin: auto;
 }
 
-h3 {
-  font-size: 1rem;
-  font-family: "Open Sans", sans-serif;
+.btn {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 1rem;
+  width: 12.8rem;
+  height: 4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.btn__add-task, .btn__new-task {
+  border: 2px solid green;
+  background: white;
+  color: green;
+}
+.btn__add-task:hover, .btn__new-task:hover {
+  background: green;
+  color: white;
+}
+.btn__delete-task {
+  border: 2px solid red;
+  background: white;
+  color: red;
+}
+.btn__delete-task:hover {
+  background: red;
+  color: white;
+}
+.btn__show-search-bar {
+  position: absolute;
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  right: calc(32vw + 1.6rem);
+  top: calc(1.6rem + 2vh);
+  border: none;
+  outline: none;
+}
+.btn__show-search-bar p {
+  font-size: 1.9rem;
+}
+.btn__show-search-bar img {
+  width: 80%;
+}
+.btn__show-search-bar:hover {
+  background: white;
+}
+.btn__close--search {
+  width: 3.2rem;
+  height: 3.2rem;
+  position: absolute;
+  right: 1.6rem;
+  top: 1.6rem;
+  background: rgba(255, 255, 255, 0.8);
+}
+.btn__close--search:hover {
+  background: white;
 }
 
 .links {

@@ -1,7 +1,8 @@
 .search {
+
     &__city {
-        width: 20.7rem;
-        height: 9rem;
+        width: 33.1rem;
+        height: 14.5rem;
         position: absolute;
         left: 32vw;
         top: 2vh;
@@ -9,7 +10,7 @@
         border-radius: 1rem;
 
         &--results {
-            top: 15rem;
+            top: 24rem;
             left: auto;
             right: 32vw;
             height: auto;
@@ -19,16 +20,16 @@
 
         &--result {
             color: white;
-            font-size: 1.5rem;
-            padding: 1rem 0rem 1rem 1rem;
+            font-size: 2.4rem;
+            padding: 1.6rem 0rem 1.6rem 1.6rem;
             cursor: pointer;
 
             &:first-child {
-                margin-top: 1rem;
+                margin-top: 1.6rem;
             }
 
             &:last-child {
-                margin-bottom: 1rem;
+                margin-bottom: 1.6rem;
             }
 
             &:hover {
@@ -50,24 +51,24 @@
             display: block;
             color: white;
             padding-top: 1vh;
-            padding-bottom: 3rem;
+            padding-bottom: 4.8rem;
             text-align: center;
-            font-size: 2rem;
+            font-size: 3.2rem;
         }
 
         &--input {
-            height: 2rem;
-            border-radius: .5rem;
+            height: 3.2rem;
+            border-radius: 1rem;
             border: none;
             outline: none;
-            margin-left: 2rem;
+            margin-left: 3.2rem;
         }
 
         &--btn {
             cursor: pointer;
-            width: 5rem;
-            height: 2rem;
-            border-radius: .5rem;
+            width: 8rem;
+            height: 3.2rem;
+            border-radius: 1rem;
             border: none;
             outline: none;
             background: rgba(#fff, .8);
@@ -77,44 +78,4 @@
             }
         }
     }
-}
-
-.show-search-bar {
-    position: absolute;
-    width: 2rem;
-    height: 2rem;
-    border-radius: .5rem;
-    cursor: pointer;
-    right: calc(32vw + 1rem);
-    top: calc(1rem + 2vh);
-    border: none;
-    outline: none;
-
-    p {
-        font-size: 1.2rem;
-        padding: 0;
-    }
-
-    img {
-        width: 80%;
-    }
-
-    &:hover {
-        background: rgba(#fff, 1);
-    }
-}
-
-.btn__close--search {
-    width: 2rem;
-    height: 2rem;
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-    background: rgba(#fff, .8);
-    transition: all .2s;
-
-    &:hover {
-        background: rgba(#fff, 1);
-    }
-
 }

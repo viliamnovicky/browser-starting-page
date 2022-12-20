@@ -16,27 +16,27 @@
     <title>Starting page</title>
   </head>
   <body>
-    <div class="weather">
-      <h1 id="location"></h1>
-      <div class="weath-info">
-        <h3 id="weath-temp"></h3>
-        <h3 id="weath-temp-feel"></h3>
+    <div class = "weather">
+      <h1 class = "weather__location"></h1>
+      <div class= "weather__info">
+        <h3 class = "weather__temp"></h3>
+        <h3 class = "weather__temp-feel"></h3>
       </div>
-      <div class="weath-info" id="weath-border">
-        <h3 id="weath-wind"></h3>
-        <h3 id="weath-vis"></h3>
+      <div class = "weather__info">
+        <h3 class = "weather__wind"></h3>
+        <h3 class = "weather__visibility"></h3>
       </div>
-      <div class="weath-info">
-        <h3 id="weath-icon"></h3>
-        <h3 id="weath-cond"></h3>
+      <div class="weather__info">
+        <h3 class = "weather__icon"></h3>
+        <h3 class = "weather__cond"></h3>
       </div>
-      <div class="weath-info" id="weath-border">
-        <h3 id="weath-max"></h3>
-        <h3 id="weath-min"></h3>
+      <div class="weather__info">
+        <h3 class = "weather__max"></h3>
+        <h3 class = "weather__min"></h3>
       </div>
-      <div class="weath-info">
-        <h3 id="weath-sunrise"></h3>
-        <h3 id="weath-sunset"></h3>
+      <div class="weather__info">
+        <h3 class = "weather__sunrise"></h3>
+        <h3 class = "weather__sunset"></h3>
       </div>
     </div>
     <div class="search search__city hidden">
@@ -51,7 +51,7 @@
       <button class="search__city--btn">search</button>
     </div>
     <div class="search search__city search__city--results hidden"></div>
-    <button class="show-search-bar">
+    <button class="btn btn__show-search-bar">
       <img src="./img/search.svg" alt="search" />
     </button>
     <div class="info-div diesel-div" id="diesel-div">
@@ -103,7 +103,7 @@
         ></a>
       </li>
     </ul>
-    <div class="modal-back hidden">
+    <div class="modal__back hidden">
       <div class="modal">
         <button class="btn btn-close">x</button>
         <h1 class="modal-coin-name"></h1>
@@ -146,10 +146,10 @@
         </h3>
       </div>
     </div>
-    <div class="modal-back-weather hidden">
-      <div class="modal-weather">
+    <div class="modal__back modal__back--weather hidden">
+      <div class="modal modal-weather">
         <div class="modal-weather__condition"></div>
-        <div class="modal-weather-days">
+        <div class="modal-weather__days">
           <h2 class="today active">TODAY</h2>
           <h2 class="tomorrow">TOMORROW</h2>
           <h2 class="after-tomorrow">AFTER-TOMORROW</h2>

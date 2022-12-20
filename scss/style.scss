@@ -1,4 +1,5 @@
 @import "base/base";
+@import "base/variables";
 
 @import "components/crypto";
 @import "components/diesel";
@@ -7,11 +8,7 @@
 @import "components/weather";
 @import "components/search_cities";
 @import "components/task_list";
-
-h3 {
-    font-size: 1rem;
-    font-family: 'Open Sans', sans-serif;
-}
+@import "components/buttons";
 
 .links {
     background: rgba(255, 255, 255, 0.5);

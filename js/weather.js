@@ -1,22 +1,23 @@
-const weatherLocation = document.getElementById("location");
-const weatherCondition = document.getElementById("weath-cond");
-const weatherIcon = document.getElementById("weath-icon");
-
-const weatherTemp = document.getElementById("weath-temp");
-const weatherTempFeel = document.getElementById("weath-temp-feel");
-
-const weatherWind = document.getElementById("weath-wind");
-const weatherVisibility = document.getElementById("weath-vis");
-
-const weatherSunrise = document.getElementById("weath-sunrise");
-const weatherSunset = document.getElementById("weath-sunset");
-
-const weatherMaxTemp = document.getElementById("weath-max");
-const weatherMinTemp = document.getElementById("weath-min");
-
 const weather = document.querySelector(".weather");
+const weatherLocation = document.querySelector(".weather__location");
+
+const weatherCondition = document.querySelector(".weather__cond");
+const weatherIcon = document.querySelector(".weather__icon");
+
+const weatherTemp = document.querySelector(".weather__temp");
+const weatherTempFeel = document.querySelector(".weather__temp-feel");
+
+const weatherWind = document.querySelector(".weather__wind");
+const weatherVisibility = document.querySelector(".weather__visibility");
+
+const weatherSunrise = document.querySelector(".weather__sunrise");
+const weatherSunset = document.querySelector(".weather__sunset");
+
+const weatherMaxTemp = document.querySelector(".weather__max");
+const weatherMinTemp = document.querySelector(".weather__min");
+
 const modalWeather = document.querySelector(".modal-weather");
-const modalBackWeather = document.querySelector(".modal-back-weather");
+const modalBackWeather = document.querySelector(".modal__back--weather");
 const btnCloseWeather = document.querySelector(".btn-close-weather");
 
 const modalCondition = document.querySelector(".modal-weather__condition");

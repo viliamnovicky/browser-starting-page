@@ -4,7 +4,7 @@ const searchCityCont = document.querySelector(".search__city");
 const searchCityResults = document.querySelector(".search__city--results");
 const searchCityBTN = document.querySelector(".search__city--btn");
 const searchCityInput = document.querySelector(".search__city--input");
-const showSearchBarBTN = document.querySelector(".show-search-bar");
+const showSearchBarBTN = document.querySelector(".btn__show-search-bar");
 const closeSearchBarBTN = document.querySelector(".btn__close--search");
 const results = document.querySelector(".search__city--results");
 
@@ -49,7 +49,7 @@ searchCityBTN.addEventListener("click", function () {
 showSearchBarBTN.addEventListener("click", function () {
   console.log("fuck");
   searchCityCont.classList.remove("hidden");
-  searchCityCont.style.top = "15rem";
+  searchCityCont.style.top = "24rem";
   showSearchBarBTN.classList.add("hidden");
 });
 

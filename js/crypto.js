@@ -1,7 +1,7 @@
 const crypto = document.getElementById("crypto")
 const cryptoClose = document.querySelector(".btn-close")
 
-const modalCryptoBack = document.querySelector(".modal-back")
+const modalCryptoBack = document.querySelector(".modal__back")
 const modalCrypto = document.querySelector(".modal")
 const modalCoinName = document.querySelector(".modal-coin-name")
 const modalCoinPrice = document.getElementById("modal-coin-price")

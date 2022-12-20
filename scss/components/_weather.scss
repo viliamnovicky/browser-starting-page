@@ -2,7 +2,7 @@
     text-align: center;
     top: 2vh;
     left: 32vw;
-    position: fixed;
+    position: relative;
     border-radius: 25px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -12,55 +12,55 @@
     height: 20vh;
     cursor: pointer;
     background: rgba(0, 0, 0, 0.5);
-}
 
-#location {
-    grid-column: 1/6;
-    padding-top: 1vh;
-}
+    &__location {
+        grid-column: 1/6;
+        padding-top: 1vh;
+    }
 
-.weath-info {
-    width: 7vw;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
+    &__info {
+        width: 7vw;
+        margin-bottom: 2.4rem;
+        text-align: center;
 
-#weath-icon {
-    width: 7vw;
-    height: 3.5rem;
-    display: inline-block;
-}
+        &:nth-child(3),
+        &:nth-child(5) {
+            border-left: 1px solid white;
+            border-right: 1px solid white;
+        }
+    }
 
-#weath-temp i,
-#weath-wind i {
-    padding-right: 0.6rem;
-}
+    &__temp i,
+    &__wind i {
+        padding-right: 1rem;
+    }
 
-#weath-cond {
-    text-align: center;
-    margin: auto;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-}
+    &__icon {
+        width: 7vw;
+        height: 5.6rem;
+        display: inline-block;
+    }
 
-#weath-border {
-    border-left: 1px solid white;
-    border-right: 1px solid white;
-
+    &__cond {
+        text-align: center;
+        margin: auto;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 .modal-weather {
     background: url(../img/modal-weather.jpg) no-repeat center center/cover;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 1fr);
-}
 
-.modal-weather-days {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 100%;
-    height: 100%;
+    &__days {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .modal-day-4 {
@@ -71,11 +71,11 @@
     justify-content: center;
     width: 100%;
     background: rgba(0, 0, 0, 0.2);
-    padding: 1rem 0;
+    padding: 1.6rem 0;
 }
 
 .modal-day-4 i {
-    font-size: 2rem;
+    font-size: 3.2rem;
 }
 
 .modal-day-temps {
@@ -118,10 +118,10 @@
 }
 
 .modal-weather-img {
-    width: 64px;
-    height: 64px;
+    width: 6.5rem;
+    height: 6.5rem;
     opacity: 1;
-    left: -2rem;
-    top: -2rem;
+    left: -3.2rem;
+    top: -3.2rem;
     z-index: 5;
 }

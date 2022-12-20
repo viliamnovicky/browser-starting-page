@@ -1,0 +1,71 @@
+.btn {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 1rem;
+    width: 12.8rem;
+    height: 4rem;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    &__add-task,
+    &__new-task {
+        border: 2px solid green;
+        background: white;
+        color: green;
+
+        &:hover {
+            background: green;
+            color: white;
+        }
+    }
+
+    &__delete-task {
+        border: 2px solid red;
+        background: white;
+        color: red;
+
+        &:hover {
+            background: red;
+            color: white;
+        }
+    }
+
+    &__show-search-bar {
+        position: absolute;
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 1rem;
+        cursor: pointer;
+        right: calc(32vw + 1.6rem);
+        top: calc(1.6rem + 2vh);
+        border: none;
+        outline: none;
+    
+        p {
+            font-size: 1.9rem;
+        }
+    
+        img {
+            width: 80%;
+        }
+    
+        &:hover {
+            background: rgba(#fff, 1);
+        }
+    }
+
+    &__close--search {
+        width: 3.2rem;
+        height: 3.2rem;
+        position: absolute;
+        right: 1.6rem;
+        top: 1.6rem;
+        background: rgba(#fff, .8);
+    
+        &:hover {
+            background: rgba(#fff, 1);
+        }
+    
+    }
+}
