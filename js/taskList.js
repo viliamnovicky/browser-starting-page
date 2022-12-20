@@ -14,7 +14,10 @@ localStorage.getItem("tasklist")
 const createTask = function () {
   const newTask = newTaskInput.value;
   console.log(newTask);
-  taskList.push({ task: newTask });
+  taskList.push(
+    { task: newTask,
+      checked: false
+    });
   localStorage.setItem("tasklist", JSON.stringify(taskList));
   taskList = JSON.parse(localStorage.getItem("tasklist"));
   console.log(taskList);
@@ -24,35 +27,50 @@ const loadTasks = function () {
   taskList.map((task, index) =>
     taskCont.insertAdjacentHTML(
       "afterbegin",
+      task.checked ?
       `
     <div class="task-list__task task${index}" id = "task${index}">
-        <input class="task-list__checkbox" type="checkbox" name="box${index}" id="box${index}">
+        <input class="task-list__checkbox" checked type="checkbox" name="box${index}" id="${index}">
         <span class="task-list__radio"></span>
-        <label class="task-list__label" for="box${index}">${task === null ? console.log("nothing") : task.task}</label>
+        <label class="task-list__label" for="${index}">${task === null ? console.log("nothing") : task.task}</label>
+    </div>
+    ` :
+    `
+    <div class="task-list__task task${index}" id = "task${index}">
+        <input class="task-list__checkbox" type="checkbox" name="box${index}" id="${index}">
+        <span class="task-list__radio"></span>
+        <label class="task-list__label" for="${index}">${task === null ? console.log("nothing") : task.task}</label>
     </div>
     `
+
     )
   );
 };
 
+const updateTasks = function(task) {
+  if (task !== null) {
+    console.log (task.id)
+    taskList[task.id].checked === true ? taskList[task.id].checked = false : taskList[task.id].checked = true
+    console.log(taskList)
+    localStorage.setItem("tasklist", JSON.stringify(taskList));
+    //taskList = JSON.parse(localStorage.getItem("tasklist"));
+  } else return
+}
+
 const deleteTasks = function() {
   let newList = []
   const tasks = [...document.querySelectorAll(".task-list__checkbox")].reverse()
-  console.log(tasks[0].checked);
-  console.log(taskList);
   tasks.map((task, index) => {if (task.checked) {
   newList.push(taskList[index]) 
     }}
   )
   
   taskList = taskList.filter(task => !newList.includes(task))
-  console.log(taskList);
 
   localStorage.setItem("tasklist", JSON.stringify(taskList));
   taskList = JSON.parse(localStorage.getItem("tasklist"));
   taskCont.innerHTML = ""
   loadTasks()
-  console.log(newList);
 }
 
 addTaskBTN.addEventListener("click", function () {
@@ -74,6 +92,11 @@ createTaskBTN.addEventListener("click", function () {
 deleteTaskBTN.addEventListener("click", function() {
   deleteTasks()
   //taskCont.innerHTML = ""
+})
+
+taskCont.addEventListener("click", function(e) {
+  const checkbox = e.target.closest(".task-list__checkbox")
+  updateTasks(checkbox)
 })
 
 loadTasks()
