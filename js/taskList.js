@@ -11,6 +11,12 @@ localStorage.getItem("tasklist")
   ? (taskList = JSON.parse(localStorage.getItem("tasklist")))
   : (taskList = []);
 
+const controlHeight = function(height, element) {
+  console.log(element.offsetHeight)
+    element.offsetHeight < height ? 
+    element.classList.remove("overflow-x__scroll") : element.classList.add("overflow-x__scroll")
+}
+
 const createTask = function () {
   const newTask = newTaskInput.value;
   console.log(newTask);
@@ -20,7 +26,6 @@ const createTask = function () {
     });
   localStorage.setItem("tasklist", JSON.stringify(taskList));
   taskList = JSON.parse(localStorage.getItem("tasklist"));
-  console.log(taskList);
 };
 
 const loadTasks = function () {

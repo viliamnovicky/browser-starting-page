@@ -1,11 +1,12 @@
 .task-list {
     position: absolute;
-    width: 20vw;
-    //min-height: 15rem;
-    background: white;
+    width: 22vw;
+    height: 56rem;
     border-radius: 1rem;
-    right: 5vw;
+    right: 3vw;
     top: 24vh;
+    overflow: hidden;
+    overflow-y: scroll;
 
     &__new-task {
         height: 8rem;
@@ -13,9 +14,12 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 80%;
-        margin: auto;
+        width: 20vw;
+        background: white;
+        margin: 0;
         transition: none;
+        padding: 0 9%;
+        border-top-right-radius: 1rem;
 
         &--input {
             height: 4rem;
@@ -28,10 +32,15 @@
 
     &__task {
         padding-left: 3.2rem;
-        width: 100%;
+        width: 20vw;
         height: 8rem;
         position: relative;
-        
+        background: white;
+
+        &:last-child {
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+        }
     }
 
     &__checkbox {
@@ -98,8 +107,12 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 80%;
+        width: 20vw;
+        padding: 0 9%;
         margin: auto;
+        background: white;
+        margin: 0;
+        border-radius: 1rem;
     }
 
 }
