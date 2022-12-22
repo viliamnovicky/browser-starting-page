@@ -1,12 +1,21 @@
 .task-list {
-    position: absolute;
-    width: 22vw;
-    height: 56rem;
-    border-radius: 1rem;
-    right: 3vw;
-    top: 24vh;
-    overflow: hidden;
-    overflow-y: scroll;
+        position: absolute;
+        width: 20vw;
+        height: 48rem;
+        overflow: hidden;
+        overflow-y: scroll;
+
+    &__outer {
+        position: absolute;
+        width: 20vw;
+        height: 56rem;
+        border-radius: 1rem;
+        right: 5vw;
+        top: 24vh;
+        background: white;
+        border-radius: 1rem;
+        overflow: hidden;
+    }
 
     &__new-task {
         height: 8rem;
@@ -20,6 +29,7 @@
         transition: none;
         padding: 0 9%;
         border-top-right-radius: 1rem;
+        border-top-left-radius: 1rem;
 
         &--input {
             height: 4rem;
@@ -113,6 +123,8 @@
         background: white;
         margin: 0;
         border-radius: 1rem;
+        position: absolute;
+        bottom: 0;
     }
 
 }

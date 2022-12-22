@@ -24,6 +24,7 @@ const cities = function (location) {
           : citiesArray === citiesArray
       );
 
+      results.classList.remove("hidden");
       citiesArray.length === 0
         ? results.insertAdjacentHTML(
             "beforeend",
@@ -36,7 +37,6 @@ const cities = function (location) {
             )
           );
 
-      results.classList.remove("hidden");
     });
 };
 
