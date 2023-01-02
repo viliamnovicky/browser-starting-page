@@ -15,29 +15,38 @@
     <link rel="stylesheet" href="./css/style.css" />
     <title>Starting page</title>
   </head>
-  <body>
-    <div class = "weather">
-      <h1 class = "weather__location"></h1>
-      <div class= "weather__info">
-        <h3 class = "weather__temp"></h3>
-        <h3 class = "weather__temp-feel"></h3>
+  <body class = "body">
+    <button class="btn btn__dark-mode">DARK MODE</button>
+    <div class="weather">
+      <div class="weather__img--cont">
+        <img class = "weather__img" src="./img/weatherAI/w1000.png" alt="" srcset="">
       </div>
-      <div class = "weather__info">
-        <h3 class = "weather__wind"></h3>
-        <h3 class = "weather__visibility"></h3>
+      <div class = "weather__cont">
+        <h1 class = "weather__location"></h1>
+        <div class= "weather__info">
+          <h3 class = "weather__temp"></h3>
+          <h3 class = "weather__temp-feel"></h3>
+        </div>
+        <div class = "weather__info">
+          <h3 class = "weather__wind"></h3>
+          <h3 class = "weather__visibility"></h3>
+        </div>
+        <div class="weather__info">
+          <h3 class = "weather__icon"></h3>
+          <h3 class = "weather__cond"></h3>
+        </div>
+        <div class="weather__info">
+          <h3 class = "weather__max"></h3>
+          <h3 class = "weather__min"></h3>
+        </div>
+        <div class="weather__info">
+          <h3 class = "weather__sunrise"></h3>
+          <h3 class = "weather__sunset"></h3>
+        </div>
       </div>
-      <div class="weather__info">
-        <h3 class = "weather__icon"></h3>
-        <h3 class = "weather__cond"></h3>
-      </div>
-      <div class="weather__info">
-        <h3 class = "weather__max"></h3>
-        <h3 class = "weather__min"></h3>
-      </div>
-      <div class="weather__info">
-        <h3 class = "weather__sunrise"></h3>
-        <h3 class = "weather__sunset"></h3>
-      </div>
+      <button class="btn btn__show-search-bar">
+        <img src="./img/search.svg" alt="search" />
+      </button>
     </div>
     <div class="search search__city hidden">
       <button class="btn btn__close btn__close--search">x</button>
@@ -51,9 +60,6 @@
       <button class="search__city--btn">search</button>
     </div>
     <div class="search search__city search__city--results hidden"></div>
-    <button class="btn btn__show-search-bar">
-      <img src="./img/search.svg" alt="search" />
-    </button>
     <div class="info-div diesel-div" id="diesel-div">
       <div class="diesel" id="diesel"></div>
     </div>
@@ -77,7 +83,6 @@
         <button class="btn btn__delete-task">delete selected</button>
       </div>
     </div>
-    <div class="background"></div>
     <ul class="links">
       <li class="link">
         <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank"
@@ -209,6 +214,7 @@
       </div>
     </div>
 
+    <script type="module" src="./js/darkMode.js"></script>
     <script type="module" src="./js/weather.js"></script>
     <script type="module" src="./js/geo.js"></script>
     <script type="module" src="./js/crypto.js"></script>

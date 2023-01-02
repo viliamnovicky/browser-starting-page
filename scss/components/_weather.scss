@@ -1,127 +1,157 @@
 .weather {
+  width: 36vw;
+  height: 20vh;
+  position: relative;
+  top: 2vh;
+  left: 32vw;
+  overflow: hidden;
+
+  &__cont {
     text-align: center;
-    top: 2vh;
-    left: 32vw;
     position: relative;
-    border-radius: 25px;
+    border-radius: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     color: white;
-    width: 36vw;
-    height: 20vh;
+    width: 100%;
+    height: 100%;
     cursor: pointer;
     background: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(90deg, #fff 0%, #fff 50%, rgba(#fff, 0) 80%);
+    color: $color-dark-1;
+    //z-index: 1;
+  }
 
-    &__location {
-        grid-column: 1/6;
-        padding-top: 1vh;
+  &__img {
+    @include absolute-center-y;
+    right: 0;
+    width: 100%;
+    z-index: 0;
+
+    &--cont {
+      @include absolute-center-y;
+      height: 100%;
+      right: 0;
+      width: 50%;
+      overflow: hidden;
+      border-radius: 2rem;
     }
+  }
 
-    &__info {
-        width: 7vw;
-        margin-bottom: 2.4rem;
-        text-align: center;
+  &__location {
+    grid-column: 1/6;
+    align-self: center;
+    font-size: 3rem;
+    text-align: left;
+    padding-left: 6rem;
+  }
 
-        &:nth-child(3),
-        &:nth-child(5) {
-            border-left: 1px solid white;
-            border-right: 1px solid white;
-        }
+  &__info {
+    width: 7vw;
+    margin-bottom: 2.4rem;
+    text-align: center;
+    align-self: center;
+
+    &:nth-child(3),
+    &:nth-child(5) {
+      border-left: 1px solid $color-dark-1;
+      border-right: 1px solid $color-dark-1;
     }
+  }
 
-    &__temp i,
-    &__wind i {
-        padding-right: 1rem;
-    }
+  &__temp i,
+  &__wind i {
+    padding-right: 1rem;
+  }
 
-    &__icon {
-        width: 7vw;
-        height: 5.6rem;
-        display: inline-block;
-    }
+  &__icon {
+    width: 7vw;
+    height: 5.6rem;
+    display: inline-block;
+  }
 
-    &__cond {
-        text-align: center;
-        margin: auto;
-        display: grid;
-        align-items: center;
-        justify-content: center;
-    }
+  &__cond {
+    text-align: center;
+    margin: auto;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .modal-weather {
-    background: url(../img/modal-weather.jpg) no-repeat center center/cover;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
+  background: url(../img/modal-weather.jpg) no-repeat center center/cover;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4, 1fr);
 
-    &__days {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        width: 100%;
-        height: 100%;
-    }
+  &__days {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .modal-day-4 {
-    display: grid;
-    grid-template-columns: repeat(4 ,1fr);
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.2);
-    padding: 1.6rem 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1.6rem 0;
 }
 
 .modal-day-4 i {
-    font-size: 3.2rem;
+  font-size: 3.2rem;
 }
 
 .modal-day-temps {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  width: 100%;
 }
 
 .modal-day-temps h3 {
-    width: 100%;
-    text-align: center;
-    height: 100%;
+  width: 100%;
+  text-align: center;
+  height: 100%;
 }
 
 .modal-day-temps h3:nth-child(2),
 .modal-day-temps h3:nth-child(4),
 .modal-day-temps h3:nth-child(6) {
-    border-left: 1px solid white;
-    border-right: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
 }
 
 .modal-weather h2 {
-    width: 100%;
-    height: 100%;
-    display: grid;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    background: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  display: grid;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .modal-weather h2:nth-child(2) {
-    border-left: 1px solid rgb(255, 255, 255);
-    border-right: 1px solid rgb(255, 255, 255);
+  border-left: 1px solid rgb(255, 255, 255);
+  border-right: 1px solid rgb(255, 255, 255);
 }
 
 .modal-weather h2:hover {
-    background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .modal-weather-img {
-    width: 6.5rem;
-    height: 6.5rem;
-    opacity: 1;
-    left: -3.2rem;
-    top: -3.2rem;
-    z-index: 5;
+  width: 6.5rem;
+  height: 6.5rem;
+  opacity: 1;
+  left: -3.2rem;
+  top: -3.2rem;
+  z-index: 5;
 }

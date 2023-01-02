@@ -7,6 +7,7 @@ const searchCityInput = document.querySelector(".search__city--input");
 const showSearchBarBTN = document.querySelector(".btn__show-search-bar");
 const closeSearchBarBTN = document.querySelector(".btn__close--search");
 const results = document.querySelector(".search__city--results");
+const weather = document.querySelector(".weather");
 
 let citiesArray = [];
 
@@ -46,11 +47,15 @@ searchCityBTN.addEventListener("click", function () {
 });
 
 
-showSearchBarBTN.addEventListener("click", function () {
-  console.log("fuck");
-  searchCityCont.classList.remove("hidden");
-  searchCityCont.style.top = "24rem";
-  showSearchBarBTN.classList.add("hidden");
+weather.addEventListener("click", function (e) {
+  const show = e.target.closest(".btn__show-search-bar")
+  if (show) {
+    console.log("fuck");
+    searchCityCont.classList.remove("hidden");
+    searchCityCont.style.top = "24rem";
+    showSearchBarBTN.classList.add("hidden");
+
+  }
 });
 
 closeSearchBarBTN.addEventListener("click", function () {

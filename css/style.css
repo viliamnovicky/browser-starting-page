@@ -10,7 +10,15 @@ html {
   font-size: 62.5%;
 }
 
+.body {
+  background: rgb(228, 228, 228);
+}
+
 /*UNIVERSAL*/
+.inverse {
+  background: rgb(26, 26, 26);
+}
+
 .hidden {
   opacity: 0 !important;
   visibility: hidden !important;
@@ -232,32 +240,62 @@ h3, p {
 }
 
 .weather {
-  text-align: center;
+  width: 36vw;
+  height: 20vh;
+  position: relative;
   top: 2vh;
   left: 32vw;
+  overflow: hidden;
+}
+.weather__cont {
+  text-align: center;
   position: relative;
-  border-radius: 25px;
+  border-radius: 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   color: white;
-  width: 36vw;
-  height: 20vh;
+  width: 100%;
+  height: 100%;
   cursor: pointer;
   background: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(90deg, #fff 0%, #fff 50%, rgba(255, 255, 255, 0) 80%);
+  color: rgb(26, 26, 26);
+}
+.weather__img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 100%;
+  z-index: 0;
+}
+.weather__img--cont {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100%;
+  right: 0;
+  width: 50%;
+  overflow: hidden;
+  border-radius: 2rem;
 }
 .weather__location {
   grid-column: 1/6;
-  padding-top: 1vh;
+  align-self: center;
+  font-size: 3rem;
+  text-align: left;
+  padding-left: 6rem;
 }
 .weather__info {
   width: 7vw;
   margin-bottom: 2.4rem;
   text-align: center;
+  align-self: center;
 }
 .weather__info:nth-child(3), .weather__info:nth-child(5) {
-  border-left: 1px solid white;
-  border-right: 1px solid white;
+  border-left: 1px solid rgb(26, 26, 26);
+  border-right: 1px solid rgb(26, 26, 26);
 }
 .weather__temp i, .weather__wind i {
   padding-right: 1rem;
@@ -568,8 +606,8 @@ h3, p {
   height: 3.2rem;
   border-radius: 1rem;
   cursor: pointer;
-  right: calc(32vw + 1.6rem);
-  top: calc(1.6rem + 2vh);
+  left: 1rem;
+  top: 3rem;
   border: none;
   outline: none;
 }
@@ -592,6 +630,9 @@ h3, p {
 }
 .btn__close--search:hover {
   background: white;
+}
+.btn__dark-mode {
+  position: absolute;
 }
 
 .links {

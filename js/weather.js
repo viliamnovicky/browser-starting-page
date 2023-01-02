@@ -1,3 +1,4 @@
+const body = document.querySelector(".body");
 const weather = document.querySelector(".weather");
 const weatherLocation = document.querySelector(".weather__location");
 
@@ -158,9 +159,12 @@ const getFutureData = function () {
         modalWeather.style.background = `url(img/w${data.forecast.forecastday[index].day.condition.code}n.jpg) no-repeat center center/cover`;
       };
 
-      weather.addEventListener("click", function () {
-        modalBackWeather.classList.remove("hidden");
-        weatherHourData(0);
+      
+      body.addEventListener("click", function (e) {
+        if(e.target.closest(".weather__cont")) {
+          modalBackWeather.classList.remove("hidden");
+          weatherHourData(0);
+        }
       });
 
       btnCloseWeather.addEventListener("click", function () {

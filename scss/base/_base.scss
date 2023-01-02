@@ -10,7 +10,14 @@ html {
     font-size: 62.5%;
 }
 
+.body {
+    background: $color-light-1;
+}
 /*UNIVERSAL*/
+
+.inverse {
+    background: $color-dark-1;
+}
 
 .hidden {
     opacity: 0 !important;

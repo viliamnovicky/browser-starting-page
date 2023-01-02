@@ -37,8 +37,8 @@
         height: 3.2rem;
         border-radius: 1rem;
         cursor: pointer;
-        right: calc(32vw + 1.6rem);
-        top: calc(1.6rem + 2vh);
+        left: 1rem;
+        top: 3rem;
         border: none;
         outline: none;
     
@@ -67,5 +67,9 @@
             background: rgba(#fff, 1);
         }
     
+    }
+
+    &__dark-mode {
+        position: absolute;
     }
 }
