@@ -16,7 +16,8 @@
     <title>Starting page</title>
   </head>
   <body class = "body">
-    <button class="btn btn__dark-mode">DARK MODE</button>
+    <button class="btn btn__mode btn__mode--dark">DARK MODE</button>
+    <button class="btn btn__mode btn__mode--light hidden">LIGHT MODE</button>
     <div class="weather">
       <div class="weather__img--cont">
         <img class = "weather__img" src="./img/weatherAI/w1000.png" alt="" srcset="">
@@ -24,23 +25,31 @@
       <div class = "weather__cont">
         <h1 class = "weather__location"></h1>
         <div class= "weather__info">
+          <img class = "weather__icon--small" src="./img/icons/temperature.svg" alt="" srcset="">
           <h3 class = "weather__temp"></h3>
+          <img class = "weather__icon--small" src="./img/icons/temperature-feelslike.svg" alt="" srcset="">
           <h3 class = "weather__temp-feel"></h3>
         </div>
         <div class = "weather__info">
+          <img class = "weather__icon--small" src="./img/icons/wind.svg" alt="" srcset="">
           <h3 class = "weather__wind"></h3>
+          <img class = "weather__icon--small" src="./img/icons/visibility.svg" alt="" srcset="">
           <h3 class = "weather__visibility"></h3>
         </div>
-        <div class="weather__info">
+        <div class="weather__info weather__info--middle">
           <h3 class = "weather__icon"></h3>
           <h3 class = "weather__cond"></h3>
         </div>
         <div class="weather__info">
+          <img class = "weather__icon--small" src="./img/icons/temperature-max.svg" alt="" srcset="">
           <h3 class = "weather__max"></h3>
+          <img class = "weather__icon--small" src="./img/icons/temperature-min.svg" alt="" srcset="">
           <h3 class = "weather__min"></h3>
         </div>
         <div class="weather__info">
+          <img class = "weather__icon--small" src="./img/icons/sunrise.svg" alt="" srcset="">
           <h3 class = "weather__sunrise"></h3>
+          <img class = "weather__icon--small" src="./img/icons/sunset.svg" alt="" srcset="">
           <h3 class = "weather__sunset"></h3>
         </div>
       </div>
@@ -61,9 +70,11 @@
     </div>
     <div class="search search__city search__city--results hidden"></div>
     <div class="info-div diesel-div" id="diesel-div">
-      <div class="diesel" id="diesel"></div>
+      <div class="diesel">
+        <img class = "diesel__icon" src="./img/icons/diesel.svg" alt="" srcset="">
+      </div>
     </div>
-    <div id="crypto"></div>
+    <div class="crypto"></div>
     <div class="task-list__outer">
       <div class="task-list">
         <div class="task-list__new-task hidden hidden__no-space">

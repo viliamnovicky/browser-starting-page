@@ -1,5 +1,5 @@
 const body = document.querySelector(".body");
-const weather = document.querySelector(".weather");
+const weatherImage = document.querySelector(".weather__img");
 const weatherLocation = document.querySelector(".weather__location");
 
 const weatherCondition = document.querySelector(".weather__cond");
@@ -85,27 +85,31 @@ const getTodayData = function () {
     })
     .then(function (data) {
       clearForecastToday()
+      console.log(data.current);
 
       weatherLocation.textContent = data.location.name;
       weatherCondition.textContent = data.current.condition.text;
       weatherIcon.style.background = `url(${data.current.condition.icon}) no-repeat center`;
       weatherTemp.insertAdjacentHTML(
         "afterbegin",
-        `<i class="fas fa-thermometer-full"></i> ${data.current.temp_c} °C`
+        `${data.current.temp_c} °C`
       );
       weatherTempFeel.insertAdjacentHTML(
         "afterbegin",
-        `<i class="fas fa-temperature-high"></i> ${data.current.temp_c} °C`
+        `${data.current.feelslike_c} °C`
       );
       weatherWind.insertAdjacentHTML(
         "afterbegin",
-        `<i class="fas fa-wind"></i> ${data.current.wind_dir}`
+        `${data.current.wind_kph} km/h`
       );
       weatherVisibility.insertAdjacentHTML(
         "afterbegin",
-        `<i class="fas fa-eye"></i> ${data.current.vis_km}km`
+        `${data.current.vis_km}km`
       );
       weatherCondition.textContent = data.current.condition.text;
+      data.current.is_day ? 
+      weatherImage.src = `./img/weatherAI/w${data.current.condition.code}.png` :
+      weatherImage.src = `./img/weatherAI/w${data.current.condition.code}n.png`
     });
 };
 
@@ -124,19 +128,19 @@ const getFutureData = function () {
 
       weatherSunrise.insertAdjacentHTML(
         "afterbegin",
-        `<i class="fas fa-arrow-up"></i><i class="fas fa-sun"></i> ${data.forecast.forecastday[0].astro.sunrise}`
+        `${data.forecast.forecastday[0].astro.sunrise}`
       );
       weatherSunset.insertAdjacentHTML(
         "afterbegin",
-        `<i class="fas fa-arrow-down"></i><i class="fas fa-sun"></i> ${data.forecast.forecastday[0].astro.sunset}`
+        `${data.forecast.forecastday[0].astro.sunset}`
       );
       weatherMaxTemp.insertAdjacentHTML(
         "afterbegin",
-        `<i class="fas fa-arrow-up"></i>${data.forecast.forecastday[0].day.maxtemp_c} °C`
+        `${data.forecast.forecastday[0].day.maxtemp_c} °C`
       );
       weatherMinTemp.insertAdjacentHTML(
         "afterbegin",
-        `<i class="fas fa-arrow-down"></i>${data.forecast.forecastday[0].day.mintemp_c} °C`
+        `${data.forecast.forecastday[0].day.mintemp_c} °C`
       );
 
       const weatherHourData = function (index) {

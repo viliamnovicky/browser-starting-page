@@ -2,7 +2,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    transition: all 0.2s;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -12,11 +11,23 @@ html {
 
 .body {
     background: $color-light-1;
+    position: relative;
+    height: 100vh;
 }
 /*UNIVERSAL*/
 
 .inverse {
-    background: $color-dark-1;
+    background: $color-dark-1 !important;
+    color: $color-white !important;
+
+    &__cont {
+        background: $color-dark-2 !important;
+    }
+
+    &__text {
+        background: none !important;
+        color: $color-white !important;
+    }
 }
 
 .hidden {

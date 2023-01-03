@@ -37,8 +37,8 @@
         height: 3.2rem;
         border-radius: 1rem;
         cursor: pointer;
-        left: 1rem;
-        top: 3rem;
+        right: 1.5rem;
+        top: 1.5rem;
         border: none;
         outline: none;
     
@@ -69,7 +69,17 @@
     
     }
 
-    &__dark-mode {
-        position: absolute;
+    &__mode {
+        @include absolute-center-x;
+        bottom: 12rem;
+
+        &--dark {
+            color: $color-dark-1;
+        }
+
+        &--light {
+            color: $color-white;
+            background: $color-dark-2;
+        }
     }
 }

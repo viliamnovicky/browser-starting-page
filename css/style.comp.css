@@ -2,7 +2,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  transition: all 0.2s;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -10,7 +9,25 @@ html {
   font-size: 62.5%;
 }
 
+.body {
+  background: rgb(228, 228, 228);
+  position: relative;
+  height: 100vh;
+}
+
 /*UNIVERSAL*/
+.inverse {
+  background: rgb(26, 26, 26) !important;
+  color: #fff !important;
+}
+.inverse__cont {
+  background: rgb(52, 52, 52) !important;
+}
+.inverse__text {
+  background: none !important;
+  color: #fff !important;
+}
+
 .hidden {
   opacity: 0 !important;
   visibility: hidden !important;
@@ -36,7 +53,11 @@ h3, p {
   font-size: 1.6rem;
 }
 
-#crypto {
+.overflow-x__scroll {
+  overflow-x: scroll;
+}
+
+.crypto {
   overflow-y: scroll;
   width: 22vw;
   height: 96vh;
@@ -45,9 +66,15 @@ h3, p {
   left: 5vw;
   overflow-x: visible;
 }
+.crypto__img {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+}
 
 .info-div {
-  background: rgba(0, 0, 0, 0.5);
+  background: #fff;
+  color: rgb(26, 26, 26);
   width: 20vw;
   height: 20vh;
   position: fixed;
@@ -56,9 +83,8 @@ h3, p {
   text-align: left;
   margin-bottom: 2vh;
 }
-
-.info-div:hover {
-  background: rgba(0, 0, 0, 0.8);
+.info-div h1, .info-div h3 {
+  color: inherit;
 }
 
 .crypto-div {
@@ -70,15 +96,12 @@ h3, p {
   height: 100%;
   border-radius: 1rem;
 }
+.coin__text {
+  color: rgb(26, 26, 26);
+}
 
 .info-div h3 {
   padding-left: 6.4rem;
-}
-
-#crypto img {
-  position: relative;
-  left: 70%;
-  bottom: 40%;
 }
 
 .green span {
@@ -93,24 +116,27 @@ h3, p {
   top: 2vh;
   right: 5vw;
   width: 20vw;
+  background: #fff;
 }
 
-#diesel {
+.diesel {
   border-radius: 1rem;
   height: 100%;
-  background: url(../img/diesel.png) no-repeat center center/cover;
+  color: rgb(26, 26, 26);
+  position: relative;
+  overflow: hidden;
 }
-
-#diesel h3:first-child {
-  padding-top: 1.6rem;
+.diesel__text:nth-child(1) {
+  padding-top: 2rem;
 }
-
-#diesel:hover {
-  background: url(../img/diesel.png) no-repeat center;
-}
-
-#diesel-div:hover {
-  background: black;
+.diesel__icon {
+  z-index: -1;
+  position: absolute;
+  width: 25rem;
+  opacity: 0.2;
+  right: 0;
+  top: 0;
+  filter: invert(0%) sepia(19%) saturate(10%) hue-rotate(317deg) brightness(93%) contrast(80%);
 }
 
 .modal__back {
@@ -214,46 +240,94 @@ h3, p {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
+  background: none;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(52, 52, 52, 0.5);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(52, 52, 52, 0.8);
 }
 
 .weather {
-  text-align: center;
+  width: 36vw;
+  height: 20vh;
+  position: relative;
   top: 2vh;
   left: 32vw;
+  overflow: hidden;
+}
+.weather__icon--small {
+  width: 4rem;
+  height: 4rem;
+  padding-left: 1.5rem;
+}
+.weather__cont {
+  text-align: center;
   position: relative;
-  border-radius: 25px;
+  border-radius: 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   color: white;
-  width: 36vw;
-  height: 20vh;
+  width: 100%;
+  height: 100%;
   cursor: pointer;
   background: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(90deg, #fff 0%, #fff 50%, rgba(255, 255, 255, 0) 80%);
+  color: rgb(26, 26, 26);
+}
+.weather__img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 100%;
+  z-index: 0;
+}
+.weather__img--cont {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100%;
+  right: 0;
+  width: 50%;
+  overflow: hidden;
+  border-radius: 2rem;
 }
 .weather__location {
   grid-column: 1/6;
-  padding-top: 1vh;
+  align-self: center;
+  font-size: 3rem;
+  text-align: left;
+  padding-left: 6rem;
 }
 .weather__info {
-  width: 7vw;
+  width: 100%;
   margin-bottom: 2.4rem;
   text-align: center;
+  align-self: center;
+  display: grid;
+  height: 7rem;
+  grid-template-columns: 1fr 3fr;
+  justify-content: center;
+  align-items: center;
+}
+.weather__info h3 {
+  display: grid;
+  justify-self: right;
+  padding-right: 1.5rem;
+}
+.weather__info--middle {
+  grid-template-columns: 1fr;
 }
 .weather__info:nth-child(3), .weather__info:nth-child(5) {
-  border-left: 1px solid white;
-  border-right: 1px solid white;
+  border-left: 1px solid rgb(26, 26, 26);
+  border-right: 1px solid rgb(26, 26, 26);
 }
 .weather__temp i, .weather__wind i {
   padding-right: 1rem;
@@ -399,6 +473,7 @@ h3, p {
   border: none;
   outline: none;
   margin-left: 3.2rem;
+  padding-left: 1rem;
 }
 .search__city--btn {
   cursor: pointer;
@@ -416,10 +491,20 @@ h3, p {
 .task-list {
   position: absolute;
   width: 20vw;
-  background: white;
+  height: 48rem;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.task-list__outer {
+  position: absolute;
+  width: 20vw;
+  height: 56rem;
   border-radius: 1rem;
   right: 5vw;
   top: 24vh;
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
 }
 .task-list__new-task {
   height: 8rem;
@@ -427,9 +512,12 @@ h3, p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 80%;
-  margin: auto;
-  transition: none;
+  width: 20vw;
+  background: white;
+  margin: 0;
+  padding: 0 9%;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
 }
 .task-list__new-task--input {
   height: 4rem;
@@ -440,9 +528,14 @@ h3, p {
 }
 .task-list__task {
   padding-left: 3.2rem;
-  width: 100%;
+  width: 20vw;
   height: 8rem;
   position: relative;
+  background: white;
+}
+.task-list__task:last-child {
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 .task-list__checkbox {
   visibility: hidden;
@@ -500,8 +593,14 @@ h3, p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 80%;
+  width: 20vw;
+  padding: 0 9%;
   margin: auto;
+  background: white;
+  margin: 0;
+  border-radius: 1rem;
+  position: absolute;
+  bottom: 0;
 }
 
 .btn {
@@ -538,8 +637,8 @@ h3, p {
   height: 3.2rem;
   border-radius: 1rem;
   cursor: pointer;
-  right: calc(32vw + 1.6rem);
-  top: calc(1.6rem + 2vh);
+  right: 1.5rem;
+  top: 1.5rem;
   border: none;
   outline: none;
 }
@@ -562,6 +661,19 @@ h3, p {
 }
 .btn__close--search:hover {
   background: white;
+}
+.btn__mode {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 12rem;
+}
+.btn__mode--dark {
+  color: rgb(26, 26, 26);
+}
+.btn__mode--light {
+  color: #fff;
+  background: rgb(52, 52, 52);
 }
 
 .links {

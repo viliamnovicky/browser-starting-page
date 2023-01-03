@@ -1,4 +1,4 @@
-const diesel = document.getElementById("diesel");
+const diesel = document.querySelector(".diesel");
 
 const getDiesel = function () {
   fetch(
@@ -9,12 +9,12 @@ const getDiesel = function () {
     })
     .then(function (data) {
       diesel.insertAdjacentHTML(
-        "beforeend",
-        `<h3>Agip Klais: ${data.stations[0].diesel}€</h3>
-        <h3>Sunoil Mittenwald: ${data.stations[1].diesel}€</h3>
-        <h3>SB Krun: ${data.stations[2].diesel}€</h3>
-        <h3>Shell GAP: ${data.stations[3].diesel}€</h3>
-        <h3>Aral GAP: ${data.stations[4].diesel}€</h3>`
+        "afterbegin",
+        `<h3 class = "diesel__text">Agip Klais: ${data.stations[0].diesel}€</h3>
+        <h3 class = "diesel__text">Sunoil Mittenwald: ${data.stations[1].diesel}€</h3>
+        <h3 class = "diesel__text">SB Krun: ${data.stations[2].diesel}€</h3>
+        <h3 class = "diesel__text">Shell GAP: ${data.stations[3].diesel}€</h3>
+        <h3 class = "diesel__text">Aral GAP: ${data.stations[4].diesel}€</h3>`
       );
     });
 };
@@ -30,8 +30,8 @@ const getDieselI = function () {
       for (let i = 0; i <= 9; i++) {
         if (data[i].name === "Reinpold Tankstelle Scharnitz") {
           diesel.insertAdjacentHTML(
-            "beforeend",
-            `<h3>ENI Scharnitz: ${parseFloat(data[4].prices[0].amount)}€</h3>`
+            "afterbegin",
+            `<h3 class = "diesel__text">ENI Scharnitz: ${parseFloat(data[4].prices[0].amount)}€</h3>`
           );
         }
       }

@@ -1,4 +1,4 @@
-#crypto {
+.crypto {
     overflow-y: scroll;
     width: 22vw;
     height: 96vh;
@@ -6,10 +6,17 @@
     top: 2vh;
     left: 5vw;
     overflow-x: visible;
+
+    &__img {
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
+    }
 }
 
 .info-div {
-    background: rgba(0, 0, 0, 0.5);
+    background: $color-white;
+    color: $color-dark-1;
     width: 20vw;
     height: 20vh;
     position: fixed;
@@ -17,10 +24,10 @@
     color: white;
     text-align: left;
     margin-bottom: 2vh;
-}
 
-.info-div:hover {
-    background: rgba(0, 0, 0, 0.8);
+    h1, h3 {
+        color: inherit;
+    }
 }
 
 .crypto-div {
@@ -31,16 +38,14 @@
 .coin {
     height: 100%;
     border-radius: 1rem;
+
+    &__text {
+        color: $color-dark-1;
+    }
 }
 
 .info-div h3 {
     padding-left: 6.4rem;
-}
-
-#crypto img {
-    position: relative;
-    left: 70%;
-    bottom: 40%;
 }
 
 .green span{

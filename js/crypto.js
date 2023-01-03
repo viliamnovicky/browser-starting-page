@@ -1,4 +1,4 @@
-const crypto = document.getElementById("crypto")
+const crypto = document.querySelector(".crypto")
 const cryptoClose = document.querySelector(".btn-close")
 
 const modalCryptoBack = document.querySelector(".modal__back")
@@ -26,24 +26,24 @@ const getCryptoData = function() {
         if ( parseFloat(data[coin].price_change_percentage_24h) > 0) {
           crypto.insertAdjacentHTML("beforeend", `
       <div class="info-div crypto-div" id = "${data[coin].symbol}-div" data-position = "${data[coin].market_cap_rank}">
-      <div class = "coin" id="${data[coin].symbol}"><br>
-        <h1 id="${data[coin].symbol}-actual" style = "text-align: center">#${data[coin].market_cap_rank} ${(data[coin].symbol).toUpperCase()}</h1>
-        <h3 id="${data[coin].symbol}-actual">Actual price: ${parseFloat(data[coin].current_price).toFixed(2)}$</h3>
-        <h3 class = "green" id="${data[coin].symbol}-dif">Difference (24h): <span> ${parseFloat(data[coin].price_change_percentage_24h).toFixed(2)}%</span></h3><br>
-        <h3 id="${data[coin].symbol}-ath">ATH: ${parseFloat(data[coin].ath)}$</h3>
-        <img src="${data[coin].image}" width = "100px">
+      <div class = "coin__text" id="${data[coin].symbol}"><br>
+        <h1 class = "coin__text" id="${data[coin].symbol}-actual" style = "text-align: center">#${data[coin].market_cap_rank} ${(data[coin].symbol).toUpperCase()}</h1>
+        <h3 class = "coin__text" id="${data[coin].symbol}-actual">Actual price: ${parseFloat(data[coin].current_price).toFixed(2)}$</h3>
+        <h3 class = "green coin__text" id="${data[coin].symbol}-dif">Difference (24h): <span> ${parseFloat(data[coin].price_change_percentage_24h).toFixed(2)}%</span></h3><br>
+        <h3 class = "coin__text" id="${data[coin].symbol}-ath">ATH: ${parseFloat(data[coin].ath)}$</h3>
+        <img class ="crypto__img" src="${data[coin].image}" width = "100px">
       </div>
     </div>`)
         }
         else {
           crypto.insertAdjacentHTML("beforeend", `
       <div class="info-div crypto-div" id = "${data[coin].symbol}-div" data-position = "${data[coin].market_cap_rank}">
-      <div class = "coin" id="${data[coin].symbol}"><br>
-        <h1 id="${data[coin].symbol}-actual" style = "text-align: center">#${data[coin].market_cap_rank} ${(data[coin].symbol).toUpperCase()}</h1>
-        <h3 id="${data[coin].symbol}-actual">Actual price: ${parseFloat(data[coin].current_price).toFixed(2)}$</h3>
-        <h3 class = "red" id="${data[coin].symbol}-dif">Difference (24h): <span> ${parseFloat(data[coin].price_change_percentage_24h).toFixed(2)}%</span></h3><br>
-        <h3 id="${data[coin].symbol}-ath">ATH: ${parseFloat(data[coin].ath)}$</h3>
-        <img src="${data[coin].image}" width = "100px">
+      <div class = "coin__text" class = "coin" id="${data[coin].symbol}"><br>
+        <h1 class = "coin__text" id="${data[coin].symbol}-actual" style = "text-align: center">#${data[coin].market_cap_rank} ${(data[coin].symbol).toUpperCase()}</h1>
+        <h3 class = "coin__text" id="${data[coin].symbol}-actual">Actual price: ${parseFloat(data[coin].current_price).toFixed(2)}$</h3>
+        <h3 class = "red coin__text" id="${data[coin].symbol}-dif">Difference (24h): <span> ${parseFloat(data[coin].price_change_percentage_24h).toFixed(2)}%</span></h3><br>
+        <h3 class = "coin__text" id="${data[coin].symbol}-ath">ATH: ${parseFloat(data[coin].ath)}$</h3>
+        <img class ="crypto__img" src="${data[coin].image}" width = "100px">
       </div>
     </div>`)
         }   

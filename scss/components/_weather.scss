@@ -6,6 +6,15 @@
   left: 32vw;
   overflow: hidden;
 
+  &__icon {
+
+    &--small {
+      width: 4rem;
+      height: 4rem;
+      padding-left: 1.5rem;
+    }
+  }
+
   &__cont {
     text-align: center;
     position: relative;
@@ -48,10 +57,25 @@
   }
 
   &__info {
-    width: 7vw;
+    width: 100%;
     margin-bottom: 2.4rem;
     text-align: center;
     align-self: center;
+    display: grid;
+    height: 7rem;
+    grid-template-columns: 1fr 3fr;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+      display: grid;
+      justify-self: right;
+      padding-right: 1.5rem;
+    }
+
+    &--middle {
+      grid-template-columns: 1fr;
+    }
 
     &:nth-child(3),
     &:nth-child(5) {
